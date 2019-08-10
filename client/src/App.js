@@ -8,7 +8,7 @@ import "font-awesome/css/font-awesome.min.css";
 import HomeLayout from "layouts";
 
 // Import Main styles for this application
-import "scss/header.css";
+import "scss/header.scss";
 
 const hist = createBrowserHistory();
 
