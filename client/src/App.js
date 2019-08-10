@@ -1,13 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import { createBrowserHistory } from "history";
-import HomeLayout from "./layouts";
+// Layouts
+import HomeLayout from "layouts";
+
+const hist = createBrowserHistory();
 
 function App() {
 	return (
 		<div className="App">
 			<h2>
-				<HomeLayout />
+				<Router history={hist}>
+					<Switch>
+						<Route exact path="/" name="Home" component={HomeLayout} />
+					</Switch>
+				</Router>
 			</h2>
 		</div>
 	);
