@@ -15,13 +15,11 @@ const hist = createBrowserHistory();
 function App() {
 	return (
 		<div className="App">
-			<h2>
-				<Router history={hist}>
-					<Switch>
-						<Route exact path="/" name="Home" component={HomeLayout} />
-					</Switch>
-				</Router>
-			</h2>
+			<Router history={hist}>
+				<Switch>
+					<Route exact path="/" name="Home" component={HomeLayout} />
+				</Switch>
+			</Router>
 		</div>
 	);
 }
