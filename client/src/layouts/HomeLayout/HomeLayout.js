@@ -7,19 +7,23 @@ import {
 	scroller
 } from "react-scroll";
 // Import View Sections
-import Header from "views/Home/header";
-import HomePage from "views/Home/homePage";
-import HomeAbout from "views/Home/about";
-import HomePortfolio from "views/Home/portfolio";
-import HomePost from "views/Home/posts";
-import HomeContact from "views/Home/contact";
+import Header from "views/home/header";
+import HomePage from "views/home/homePage";
+import HomeAbout from "views/home/about";
+import HomePortfolio from "views/home/portfolio";
+import HomePost from "views/home/posts";
+import HomeContact from "views/home/contact";
 
 function HomeLayout() {
 	return (
 		<Fragment>
+			{/* -- Loader -- */}
+
+			{/* -- Header -- */}
 			<div id="header" className="">
 				<Header />
 			</div>
+			{/* -- Start Sections -- */}
 			<div id="content" className="">
 				{/* -- Section - Home -- */}
 				<Element name="home" className="element">
