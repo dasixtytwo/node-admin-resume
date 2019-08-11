@@ -17,12 +17,16 @@ import HomeContact from "views/home/contact";
 function HomeLayout() {
 	return (
 		<Fragment>
+			{/* -- Loader -- */}
+
+			{/* -- Header -- */}
 			<div id="header" className="">
 				<Header />
 			</div>
+			{/* -- Start Sections -- */}
 			<div id="content" className="">
 				{/* -- Section - Home -- */}
-				<Element name="home" className="element">
+				<Element name="start" className="element">
 					<HomePage />
 				</Element>
 				{/* -- Section - Resume -- */}
