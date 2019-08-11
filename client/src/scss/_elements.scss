@@ -1,0 +1,354 @@
+/* ----------------------------------------------------------------------------- */
+/* --- ELEMENTS
+/* ----------------------------------------------------------------------------- */
+
+/* Icons
+	-------------------------------------------- */
+
+.icon-box {
+	display: inline-block;
+	margin-bottom: 30px;
+}
+.icon-box .icon {
+	margin-bottom: 10px;
+}
+.icon-box .title {
+	display: block;
+}
+
+.icon {
+	font-size: 62px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 84px;
+}
+
+.icon.icon-hover {
+	transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+}
+
+.icon-circle {
+	position: relative;
+	font-size: 32px;
+	height: 84px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	color: #fff;
+}
+
+.icon-circle > * {
+	position: absolute;
+	top: 49%;
+	left: 49%;
+	display: inline-block;
+	transform: translate3d(-50%, -50%, 0);
+	-webkit-transform: translate3d(-50%, -50%, 0);
+}
+
+.icon.icon-hover {
+	transition: all 0.1s ease-out;
+	-moz-transition: all 0.1s ease-out;
+	-webkit-transition: all 0.1s ease-out;
+	-o-transition: all 0.1s ease-out;
+}
+
+a.icon > *:hover,
+a.icon > *:focus {
+	color: inherit;
+}
+
+/* Sizes */
+
+.icon-lg {
+	font-size: 88px;
+	width: 120px;
+}
+.icon-lg.icon-circle {
+	font-size: 54px;
+	height: 120px;
+}
+
+.icon-sm {
+	font-size: 42px;
+	width: 56px;
+}
+.icon-sm.icon-circle {
+	font-size: 16px;
+	height: 56px;
+}
+
+.icon-xs {
+	font-size: 13px;
+	width: 34px;
+}
+.icon-xs.icon-circle {
+	font-size: 11px;
+	height: 34px;
+}
+
+/* Colors */
+
+.icon-green,
+.icon-success {
+	background-color: #85b448;
+}
+.icon-green.icon-hover:hover,
+.icon-success.icon-hover:hover,
+.icon-green.icon-hover:focus,
+.icon-success.icon-hover:focus {
+	color: #85b448;
+}
+.icon-blue,
+.icon-info {
+	background-color: #3aa8db;
+}
+.icon-blue.icon-hover:hover,
+.icon-info.icon-hover:hover,
+.icon-blue.icon-hover:focus,
+.icon-info.icon-hover:focus {
+	color: #3aa8db;
+}
+.icon-orange,
+.icon-warning {
+	background-color: #d86a39;
+}
+.icon-orange.icon-hover:hover,
+.icon-warning.icon-hover:hover,
+.icon-orange.icon-hover:focus,
+.icon-warning.icon-hover:focus {
+	color: #d86a39;
+}
+.icon-red,
+.icon-danger {
+	background-color: #ca4441;
+}
+.icon-red.icon-hover:hover,
+.icon-danger.icon-hover:hover,
+.icon-red.icon-hover:focus,
+.icon-danger.icon-hover:focus {
+	color: #ca4441;
+}
+.icon-white {
+	background-color: #fff;
+	color: #282828;
+}
+.icon-white.icon-hover:hover,
+.icon-white.icon-hover:focus {
+	color: #fff;
+	color: #282828;
+}
+.icon-black {
+	background-color: #282828;
+}
+.icon-black.icon-hover:hover,
+.icon-black.icon-hover:focus {
+	color: #282828;
+}
+.icon-grey {
+	background-color: #f8f8f8;
+	color: #282828;
+}
+.icon-grey.icon-hover:hover,
+.icon-grey.icon-hover:focus {
+	color: #282828;
+}
+.icon-blue-dark {
+	background-color: #1a2a41;
+}
+.icon-blue-dark.icon-hover:hover,
+.icon-blue-dark.icon-hover:focus {
+	color: #1a2a41;
+}
+.icon-red-dark {
+	background-color: #4b1615;
+}
+.icon-red-dark.icon-hover:hover,
+.icon-red-dark.icon-hover:focus {
+	color: #4b1615;
+}
+.icon-red-navy {
+	background-color: #723e3d;
+}
+.icon-red-navy.icon-hover:hover,
+.icon-red-navy.icon-hover:focus {
+	color: #723e3d;
+}
+.icon-green-dark {
+	background-color: #232d1c;
+}
+.icon-green-dark.icon-hover:hover,
+.icon-green-dark.icon-hover:focus {
+	color: #232d1c;
+}
+.icon-green-navy {
+	background-color: #647247;
+}
+.icon-green-navy.icon-hover:hover,
+.icon-green-navy.icon-hover:focus {
+	color: #647247;
+}
+.icon-brown {
+	background-color: #32281d;
+}
+.icon-brown.icon-hover:hover,
+.icon-brown.icon-hover:focus {
+	color: #32281d;
+}
+.icon-blue-navy {
+	background-color: #31485e;
+}
+.icon-blue-navy.icon-hover:hover,
+.icon-blue-navy.icon-hover:focus {
+	color: #31485e;
+}
+.icon-yellow {
+	background-color: #ddc13e;
+}
+.icon-yellow.icon-hover:hover,
+.icon-yellow.icon-hover:focus {
+	color: #ddc13e;
+}
+.icon-yellow-navy {
+	background-color: #8e824c;
+}
+.icon-yellow-navy.icon-hover:hover,
+.icon-yellow-navy.icon-hover:focus {
+	color: #8e824c;
+}
+.icon-beige {
+	background-color: #caa669;
+}
+.icon-beige.icon-hover:hover,
+.icon-beige.icon-hover:focus {
+	color: #caa669;
+}
+.icon-purple {
+	background-color: #8566b5;
+}
+.icon-purple.icon-hover:hover,
+.icon-purple.icon-hover:focus {
+	color: #8566b5;
+}
+.icon-purple-navy {
+	background-color: #352a47;
+}
+.icon-purple-navy.icon-hover:hover,
+.icon-purple-navy.icon-hover:focus {
+	color: #352a47;
+}
+
+.icon.icon-hover:not(.icon-circle):hover {
+	color: inherit;
+}
+.icon-circle.icon-hover:hover:not(.icon-white):not(#messenger-toggle),
+.icon-circle.icon-hover:focus:not(.icon-white):not(#messenger-toggle),
+a.icon-circle:hover:not(.icon-white):not(#messenger-toggle),
+a.icon-circle:focus:not(.icon-white):not(#messenger-toggle) {
+	background-color: #fff !important;
+}
+.icon.icon-hover.icon-white:hover,
+.icon.icon-hover.icon-white:focus {
+	background-color: transparent;
+	color: inherit;
+}
+
+/* Social Icons */
+
+.social-icons {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.social-icons > li {
+	display: inline-block;
+}
+
+.icon-behance {
+	background-color: #0098fd;
+}
+.icon-behance:hover,
+.icon-behance:focus {
+	color: #0098fd;
+}
+.icon-dribbble {
+	background-color: #f16092;
+}
+.icon-dribbble:hover,
+.icon-dribbble:focus {
+	color: #f16092;
+}
+.icon-dropbox {
+	background-color: #0093eb;
+}
+.icon-dropbox:hover,
+.icon-dropbox:focus {
+	color: #0093eb;
+}
+.icon-facebook {
+	background-color: #1f4578;
+}
+.icon-facebook:hover,
+.icon-facebook:focus {
+	color: #1f4578;
+}
+.icon-github {
+	background-color: #757575;
+}
+.icon-github:hover,
+.icon-github:focus {
+	color: #757575;
+}
+.icon-google-plus {
+	background-color: #e13d3d;
+}
+.icon-google-plus:hover,
+.icon-google-plus:focus {
+	color: #e13d3d;
+}
+.icon-instagram {
+	background-color: #bd7f55;
+}
+.icon-instagram:hover,
+.icon-instagram:focus {
+	color: #bd7f55;
+}
+.icon-linkedin {
+	background-color: #008fc3;
+}
+.icon-linkedin:hover,
+.icon-linkedin:focus {
+	color: #008fc3;
+}
+.icon-skype {
+	background-color: #16bef1;
+}
+.icon-skype:hover,
+.icon-skype:focus {
+	color: #16bef1;
+}
+.icon-tumblr {
+	background-color: #3a5974;
+}
+.icon-tumblr:hover,
+.icon-tumblr:focus {
+	color: #3a5974;
+}
+.icon-twitter {
+	background-color: #50c8e6;
+}
+.icon-twitter:hover,
+.icon-twitter:focus {
+	color: #50c8e6;
+}
+.icon-youtube {
+	background-color: #eb3c31;
+}
+.icon-youtube:hover,
+.icon-youtube:focus {
+	color: #eb3c31;
+}
