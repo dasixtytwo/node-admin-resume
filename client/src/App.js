@@ -9,8 +9,10 @@ import { DashboardLayout, HomeLayout } from "layouts";
 //import pages;
 import { Login, Register, NotFound } from "views/pages";
 
-// Import Main styles for this application
-import "scss/styles.scss";
+// Import Main styles for the home
+import "scss/home/styles.scss";
+// Import Main styles for the backend
+import "scss/dashboard/styles.scss";
 
 const hist = createBrowserHistory();
 
