@@ -8,7 +8,6 @@ package-lock.json
 .eslintrc.json
 /.vscode
 yarn.lock
-/client/src/blueprint
 
 # config
 /config/keys_dev.js
