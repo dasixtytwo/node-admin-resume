@@ -64,7 +64,7 @@ class Login extends Component {
 		this.props.loginUser(userData);
 	}
 	render() {
-		const { errors } = this.props;
+		const { errors, alertMessage } = this.props;
 		return (
 			<div className="da-app-login-wrap">
 				<div className="da-app-login-container">
@@ -89,21 +89,34 @@ class Login extends Component {
 								onSubmit={this.onSubmit}
 								className="da-signin-form da-form-row0"
 							>
-								<FormItem>
+								<FormItem
+									validateStatus={errors.email ? "error" : ""}
+									help={errors.email}
+								>
 									<Input
+										id="mail"
 										prefix={
 											<Icon type="mail" style={{ color: "rgba(0,0,0,.25)" }} />
 										}
+										type="email"
 										placeholder="Email"
+										value={this.state.email}
+										onChange={this.handleChange("email")}
 									/>
 								</FormItem>
-								<FormItem>
+								<FormItem
+									validateStatus={errors.password ? "error" : ""}
+									help={errors.password}
+								>
 									<Input
+										id="user-password"
 										prefix={
 											<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
 										}
-										type="password"
+										type={this.state.type}
 										placeholder="Password"
+										value={this.state.password}
+										onChange={this.handleChange("password")}
 									/>
 								</FormItem>
 								<FormItem>
@@ -120,23 +133,23 @@ class Login extends Component {
 									<span>or connect with</span>
 									<ul className="da-social-link">
 										<li>
-											<Icon type="google" onClick="" />
+											<Icon type="google" />
 										</li>
 										<li>
-											<Icon type="facebook" onClick="" />
+											<Icon type="facebook" />
 										</li>
 										<li>
-											<Icon type="github" onClick="" />
+											<Icon type="github" />
 										</li>
 										<li>
-											<Icon type="twitter" onClick="" />
+											<Icon type="twitter" />
 										</li>
 									</ul>
 								</div>
 								<span className="da-text-light da-fs-sm">DA Admin</span>
 							</Form>
 						</div>
-						<div className="da-loader-view">{/*<CircularProgress />*/}</div>
+						{/*<div className="da-loader-view"><CircularProgress /></div>*/}
 					</div>
 				</div>
 			</div>
