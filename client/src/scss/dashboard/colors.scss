@@ -1,0 +1,70 @@
+/* 
+* DEVICE BREAKPOINTS 
+*/
+$mobile_breakpoint: "screen and (max-width: 450px)";
+$antd_rangepicker_breakpoint: "screen and (max-width: 565px)";
+$mobile_landscape_breakpoint: "screen and (max-width: 850px)";
+$desktop_breakpoint: "screen and (max-width: 4000px)";
+
+/* 
+* TEXT AND FONTS 
+*/
+@import url("https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto:700&display=swap");
+
+$font-family-roboto: "Roboto", "Montserrat", "Lucida Sans",
+  "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Verdana,
+  sans-serif;
+$font-family-montserrat: "Montserrat", "Lucida Sans", "Lucida Sans Regular",
+  "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+
+/* 
+* PALETTE COLORS
+* To get a colors name go here: http://chir.ag/projects/name-that-color
+*/
+$white: #ffffff;
+$blue: #1890ff;
+$purple: #722ed1;
+$cyan: #13c2c2;
+$green: #52c41a;
+$magenta: #eb2f96;
+$pink: #eb2f96;
+$red: #f5222d;
+$orange: #fa8c16;
+$yellow: #fadb14;
+$volcano: #fa541c;
+$geekblue: #2f54eb;
+$lime: #a0d911;
+$gold: #faad14;
+
+$preset-colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime,
+  green, blue, geekblue, purple;
+
+// Default
+$color-primary: #26abe2 !default;
+$color-secondary: #f47633 !default;
+$color-tertiary: #434345 !default;
+$color-primary-dark: #044c93 !default;
+$color-pale-orange: #ff9262 !default;
+$color-yellow: #ffd500 !default;
+$color-valid-green: #28a745 !default;
+$color-invalid-red: #dc3545 !default;
+$color-lightest-grey: #eeeeee !default;
+$color-light-grey: #cccccc !default;
+$color-medium-grey: #aaaaaa !default;
+$color-slate-grey: #707070 !default;
+
+// Ant Defaults
+$color-ant-default-border: #e8e8e8 !default;
+
+// Custom
+$color-dusty-grey: #959494 !default;
+$color-wild-sand: #f5f5f5 !default;
+$color-alto: #d9d9d9 !default;
+$color-emperor: #555555 !default;
+
+$h1-font-color: $color-primary !default;
+$h2-font-color: $color-secondary !default;
+$h3-font-color: $color-primary !default;
+$h4-font-color: $color-tertiary !default;
+$h5-font-color: $color-slate-grey !default;
+$h6-font-color: $color-slate-grey !default;

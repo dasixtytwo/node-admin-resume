@@ -6,7 +6,8 @@ import { Button, Checkbox, Form, Icon, Input, message } from "antd";
 // Styled component
 import styled from "styled-components";
 // Load image
-import logoBrand from "assets/images/logo/logo.png";
+import loginImage from "assets/images/profile-bg.jpg";
+import logoBrand from "assets/images/logo/logo-dark.png";
 
 const Image = styled.img`
 	margin-bottom: 10px;
@@ -23,12 +24,12 @@ export default function Login() {
 				<div className="da-app-login-main-content">
 					<div className="da-app-logo-content">
 						<div className="da-app-logo-content-bg">
-							<img src="https://via.placeholder.com/272x395" alt="Neature" />
+							<img src={loginImage} alt="Neature" />
 						</div>
 						<div className="da-app-logo-wid">
-							<h1>{/*<IntlMessages id="app.userAuth.signIn" />*/}</h1>
-							<p />
-							<p />
+							<h1>Sign In</h1>
+							<p>By Signin Up, you can avail full features of our services.</p>
+							<p>Get an account !!!</p>
 						</div>
 						<div className="da-app-logo">
 							<img alt="example" src={logoBrand} />
@@ -67,7 +68,7 @@ export default function Login() {
 									</li>
 								</ul>
 							</div>
-							<span className="da-text-light da-fs-sm"> test</span>
+							<span className="da-text-light da-fs-sm">DA Admin</span>
 						</Form>
 					</div>
 					<div className="da-loader-view">{/*<CircularProgress />*/}</div>
