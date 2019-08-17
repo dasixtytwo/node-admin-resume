@@ -24,28 +24,19 @@ class Login extends Component {
 			type: "password"
 		};
 		this.onSubmit = this.onSubmit.bind(this);
-		this.showPassword = this.showPassword.bind(this);
 	}
 	handleChange = prop => e => {
 		this.setState({
 			[prop]: e.target.value
 		});
 	};
-	handleMouseDownPassword = e => {
-		e.preventDefault();
-	};
-	showPassword(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		this.setState({
-			type: this.state.type === "input" ? "password" : "input"
-		});
-	}
+
 	componentDidMount() {
 		if (this.props.auth.isAuthenticated) {
 			this.props.history.push("/dashboard");
 		}
 	}
+
 	componentWillReceiveProps(nextProps) {
 		if (nextProps.auth.isAuthenticated) {
 			this.props.history.push("/dashboard");
@@ -54,6 +45,7 @@ class Login extends Component {
 			this.setState({ errors: nextProps.errors });
 		}
 	}
+
 	onSubmit(e) {
 		e.preventDefault();
 
@@ -71,7 +63,7 @@ class Login extends Component {
 					<div className="da-app-login-main-content">
 						<div className="da-app-logo-content">
 							<div className="da-app-logo-content-bg">
-								<img src={loginImage} alt="Neature" />
+								<img src={loginImage} alt="DA Login" />
 							</div>
 							<div className="da-app-logo-wid">
 								<h1>Sign In</h1>
@@ -108,7 +100,7 @@ class Login extends Component {
 									validateStatus={errors.password ? "error" : ""}
 									help={errors.password}
 								>
-									<Input
+									<Input.Password
 										id="user-password"
 										prefix={
 											<Icon type="lock" style={{ color: "rgba(0,0,0,.25)" }} />
@@ -120,14 +112,19 @@ class Login extends Component {
 									/>
 								</FormItem>
 								<FormItem>
-									<Checkbox>Remember me</Checkbox>
-									<span className="da-signup-form-forgot da-link" />
+									<Checkbox>by signing up, I accept</Checkbox>
+									<span className="da-signup-form-forgot da-link">
+										Term & condition
+									</span>
 								</FormItem>
 								<FormItem>
 									<Button type="primary" className="da-mb-0" htmlType="submit">
-										Login
+										Sign In
 									</Button>
-									<span /> <Link to="/register" />
+									<span> or</span>{" "}
+									<Link to="/register">
+										<span>Sign Up</span>
+									</Link>
 								</FormItem>
 								<div className="da-flex-row da-justify-content-between">
 									<span>or connect with</span>
@@ -146,7 +143,6 @@ class Login extends Component {
 										</li>
 									</ul>
 								</div>
-								<span className="da-text-light da-fs-sm">DA Admin</span>
 							</Form>
 						</div>
 						{/*<div className="da-loader-view"><CircularProgress /></div>*/}
