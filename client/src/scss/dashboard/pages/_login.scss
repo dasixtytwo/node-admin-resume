@@ -2,11 +2,14 @@
 	position: relative;
 	height: 100%;
 	padding-bottom: $size-30;
-	/*@include flex-only(1);
+	@include flex-only(1);
 
 	@include flex-display(flex, row, wrap);
+	/*@include flex-display(flex);
+	@include flex-direction(row);
+	@include flex-wrap(wrap);*/
 	@include align-items(center);
-	@include justify-content(center);*/
+	@include justify-content(center);
 }
 
 .#{$class-prefix}-login-content {
@@ -15,8 +18,8 @@
 	margin: auto;
 	padding: 35px 35px 20px;
 	background-color: #fff;
-	//@include border-radius($border-radius-lg);
-	//@include box-shadow($gx-card-shadow);
+	@include border-radius($border-radius-lg);
+	@include box-shadow($da-card-shadow);
 	font-size: 14px;
 
 	& .ant-input {
@@ -53,8 +56,8 @@
 
 .#{$class-prefix}-app-login-wrap {
 	height: 100%;
-	//@include flex-display(flex, column, nowrap);
-	//@include justify-content(center);
+	@include flex-display(flex, column, nowrap);
+	@include justify-content(center);
 	overflow-x: hidden;
 
 	@media screen and (max-width: $screen-xs-max) {
@@ -85,10 +88,10 @@
 }
 
 .#{$class-prefix}-app-login-main-content {
-	//@include flex-display(flex, row, wrap);
+	@include flex-display(flex, row, wrap);
 	background-color: #fff;
-	//@include box-shadow($da-card-shadow);
-	//@include border-radius($border-radius-lg + 2px);
+	@include box-shadow($da-card-shadow);
+	@include border-radius($border-radius-lg + 2px);
 	font-size: 14px;
 	overflow: hidden;
 }
@@ -139,7 +142,7 @@
 	width: 40%;
 	position: relative;
 	overflow: hidden;
-	//@include flex-display(flex, column, nowrap);
+	@include flex-display(flex, column, nowrap);
 
 	& > * {
 		position: relative;
@@ -186,9 +189,9 @@
 }
 
 .#{$class-prefix}-app-social-block {
-	/*@include flex-display(flex, row, wrap);
+	@include flex-display(flex, row, wrap);
 	@include align-items(center);
-	@include justify-content(space-between);*/
+	@include justify-content(space-between);
 
 	& .#{$class-prefix}-social-link,
 	& .#{$class-prefix}-social-link li {
@@ -197,7 +200,7 @@
 
 	& .#{$class-prefix}-social-link span {
 		border: $border-style-base $border-width-base $primary-color;
-		//@include border-radius($border-radius-circle);
+		@include border-radius($border-radius-circle);
 		color: $primary-color;
 
 		&:hover,
