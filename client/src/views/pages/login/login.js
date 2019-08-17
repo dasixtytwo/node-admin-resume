@@ -145,7 +145,12 @@ class Login extends Component {
 								</div>
 							</Form>
 						</div>
-						{/*<div className="da-loader-view"><CircularProgress /></div>*/}
+						{/*loader && (
+							<div className="da-loader-view">
+								<CircularProgress />
+							</div>
+						)}
+						{showMessage && message.error(alertMessage)*/}
 					</div>
 				</div>
 			</div>

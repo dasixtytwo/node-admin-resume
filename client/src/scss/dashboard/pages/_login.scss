@@ -89,7 +89,7 @@
 
 .#{$class-prefix}-app-login-main-content {
 	@include flex-display(flex, row, wrap);
-	background-color: #fff;
+	background-color: $white-color;
 	@include box-shadow($da-card-shadow);
 	@include border-radius($border-radius-lg + 2px);
 	font-size: 14px;
