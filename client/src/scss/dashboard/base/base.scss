@@ -41,8 +41,8 @@ body {
 
 		@media screen and (max-width: $screen-md-max) {
 			height: 100vh;
-			//.box-shadow(none) !important;
-			//.border-radius(0) !important;
+			@include box-shadow(none !important);
+			@include border-radius(0 !important);
 		}
 	}
 }
@@ -192,9 +192,9 @@ img {
 }
 
 .#{$class-prefix}-size-90 {
-	height: ($size-100 - 10) !important;
-	width: ($size-100 - 10) !important;
-	line-height: ($size-100 - 10) !important;
+	height: ($size-100 - 10 !important);
+	width: ($size-100 - 10 !important);
+	line-height: ($size-100 - 10 !important);
 }
 
 .#{$class-prefix}-size-80 {
@@ -572,39 +572,39 @@ hr {
 }
 
 // Box Shadow
-/*.#{$class-prefix}-box-shadow {
+.#{$class-prefix}-box-shadow {
 	@include box-shadow($da-card-shadow);
 }
 
 .#{$class-prefix}-no-box-shadow {
 	@include box-shadow(none);
-}*/
+}
 
 // Border radius
-/*
+
 .#{$class-prefix}-rounded-xs {
-  .border-radius($border-radius-sm - 2px) !important;
+	@include border-radius($border-radius-sm - 2px !important);
 }
 
 .#{$class-prefix}-rounded-sm {
-  .border-radius($border-radius-sm) !important;
+	@include border-radius($border-radius-sm !important);
 }
 
 .#{$class-prefix}-rounded-base {
-  .border-radius($border-radius-base) !important;
+	@include border-radius($border-radius-base !important);
 }
 
 .#{$class-prefix}-rounded-lg {
-  .border-radius($border-radius-lg) !important;
+	@include border-radius($border-radius-lg !important);
 }
 
 .#{$class-prefix}-rounded-xxl {
-  .border-radius($border-radius-xxl) !important;
+	@include border-radius($border-radius-xxl !important);
 }
 
 .#{$class-prefix}-rounded-circle {
-  .border-radius($border-radius-circle) !important;
-}*/
+	@include border-radius($border-radius-circle !important);
+}
 
 .#{$class-prefix}-border-radius-top-left-0 {
 	-moz-border-top-left-radius: 0;
