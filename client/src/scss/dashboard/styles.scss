@@ -1,6 +1,28 @@
-/* ----------------------------------------------------------------------------- */
-/* --- MAIN STYLES
-/* ----------------------------------------------------------------------------- */
+/*
+Author         : Davide A
+Template Name  : Antd React - Admin Template
+Version        : 0.1
+*/
+/*=============================================================
+    Table of Contents:
+    =============================
+    A. Globals
 
-// If you want to override variables do it here
-@import "variables";
+    B. Base
+
+    C. Layouts
+
+    D. UI Components
+
+    E. Apps
+
+    F. Pages
+        01. Login Styles
+
+  =============================================================*/
+@import "../../../node_modules/antd/dist/antd.min.css";
+// Custom Variables
+@import "global/index";
+//Custom Files
+@import "base/index";
+@import "pages/index";
