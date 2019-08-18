@@ -41,7 +41,7 @@ export default function HomeHeader() {
 							spy={true}
 							smooth={true}
 							duration={600}
-							offset={-63}
+							offset={0}
 						>
 							<span>About</span>
 						</Link>
@@ -53,7 +53,7 @@ export default function HomeHeader() {
 							spy={true}
 							smooth={true}
 							duration={600}
-							offset={-63}
+							offset={0}
 						>
 							<span>Portfolio</span>
 						</Link>
@@ -65,7 +65,7 @@ export default function HomeHeader() {
 							spy={true}
 							smooth={true}
 							duration={600}
-							offset={-63}
+							offset={0}
 						>
 							<span>Blog</span>
 						</Link>
@@ -77,7 +77,7 @@ export default function HomeHeader() {
 							spy={true}
 							smooth={true}
 							duration={600}
-							offset={-63}
+							offset={0}
 						>
 							<span>Contact</span>
 						</Link>
