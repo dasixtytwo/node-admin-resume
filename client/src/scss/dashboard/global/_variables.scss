@@ -64,8 +64,8 @@ $border-color: $border-color-split;
 
 // LINK
 $link-color: $primary-color;
-//$link-hover-color: color(~`colorPalette("${link-color}", 5)`);
-//$link-active-color: color(~`colorPalette("${link-color}", 7)`);
+//$link-hover-color: color(colorPalette(${link-color}, 5));
+//$link-active-color: color(colorPalette(${link-color}, 7));
 
 $h1-font-size: 22px;
 $h2-font-size: 20px;

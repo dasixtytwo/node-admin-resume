@@ -1,6 +1,6 @@
 import React from "react";
 
-import backgrounImg from "assets/images/backgrounds/bg-1.jpg";
+import backgrounImg from "assets/images/it-bg01.jpg";
 
 export default function HomePage() {
 	return (

@@ -5,10 +5,10 @@
 body {
 	position: relative;
 	color: #282828;
-	font-size: 13px;
-	font-family: "Helvetica Neue", "Roboto", Helvetica, Arial, sans-serif;
-	font-weight: 400;
-	line-height: 1.6;
+	@include font-size(13px);
+	font-family: $font-family;
+	font-weight: $body-font-weight;
+	line-height: $body-line-height;
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -16,10 +16,7 @@ body {
 
 a {
 	color: inherit;
-	transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-webkit-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
+	@include transition(all 0.2s ease-in-out);
 }
 
 a:hover,
@@ -32,9 +29,7 @@ input:focus,
 a:focus,
 a:visited,
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+	@include box-sizing(border-box);
 }
 *:focus {
 	outline: none;
@@ -70,13 +65,13 @@ img {
 }
 
 .bg-secondary {
-	background-color: #31485e;
+	background-color: $secondary-color;
 }
 
 .text-secondary {
-	color: #31485e;
+	color: $text-secondary-color;
 }
 
 .text-tertiary {
-	color: #caa669;
+	color: $text-tertiary-color;
 }

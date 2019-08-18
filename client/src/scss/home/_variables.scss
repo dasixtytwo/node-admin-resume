@@ -1,0 +1,25 @@
+// Base background color for most components
+$component-background: #fff;
+$background-light: hsv(0, 0, 98%); // background of header and selected item
+$background-base: hsv(0, 0, 96%); // Default grey background color
+
+// ColorPicker Variables
+$white-color: #ffffff;
+$black-color: #000000;
+$light-color: #111111;
+
+$blue: #3aa8db;
+$dark-blue: #31485e;
+$gold: #caa669;
+
+// Default
+//global style variables
+$primary-color: $blue;
+$secondary-color: $dark-blue;
+$tertiary-color: $gold;
+$text-color: $blue;
+$text-secondary-color: $dark-blue;
+$text-tertiary-color: $gold;
+
+//background
+$background-color: $primary-color;
