@@ -1,5 +1,5 @@
 body {
-	overflow: hidden;
+	overflow: auto;
 	@include transition(all 0.3s ease-out);
 	width: 100% !important;
 	position: relative;

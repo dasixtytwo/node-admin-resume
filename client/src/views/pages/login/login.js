@@ -23,8 +23,8 @@ class Login extends Component {
 			errors: {},
 			type: "password"
 		};
-		this.onSubmit = this.onSubmit.bind(this);
 	}
+
 	handleChange = prop => e => {
 		this.setState({
 			[prop]: e.target.value
@@ -46,7 +46,7 @@ class Login extends Component {
 		}
 	}
 
-	onSubmit(e) {
+	onSubmit = e => {
 		e.preventDefault();
 
 		const userData = {
@@ -54,9 +54,10 @@ class Login extends Component {
 			password: this.state.password
 		};
 		this.props.loginUser(userData);
-	}
+	};
+
 	render() {
-		const { errors, alertMessage } = this.props;
+		const { errors } = this.props;
 		return (
 			<div className="da-app-login-wrap">
 				<div className="da-app-login-container">

@@ -22,7 +22,7 @@ import "assets/vendors/style";
 // Import Main styles for the dashboard
 import "scss/dashboard/da-backend.scss";
 // Import Main styles for the home
-import "scss/home/styles.scss";
+import "scss/home/da-frontend.scss";
 
 // Check for token
 if (localStorage.jwtDAToken) {

@@ -20,11 +20,11 @@ function HomeLayout() {
 			{/* -- Loader -- */}
 
 			{/* -- Header -- */}
-			<div id="header" className="">
+			<div id="header" className="bg-white hidden-sm hidden-xs">
 				<Header />
 			</div>
 			{/* -- Start Sections -- */}
-			<div id="content" className="">
+			<div id="content" className="bg-white">
 				{/* -- Section - Home -- */}
 				<Element name="start" className="element">
 					<HomePage />
