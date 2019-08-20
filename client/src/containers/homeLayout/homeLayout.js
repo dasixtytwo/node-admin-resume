@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getProfiles } from "actions/profileActions";
 import {
 	Element,
 	animateScroll as scroll,
@@ -15,6 +17,15 @@ import HomePost from "views/home/posts";
 import HomeContact from "views/home/contact";
 
 function HomeLayout() {
+	const dataprofile = useSelector(state => state.profile);
+	const dispatch = useDispatch();
+
+	const { profiles, loading } = dataprofile;
+
+	useEffect(() => {
+		dispatch(getProfiles());
+	}, []);
+
 	return (
 		<Fragment>
 			{/* -- Loader -- */}
@@ -27,7 +38,7 @@ function HomeLayout() {
 			<div id="content" className="bg-white">
 				{/* -- Section - Home -- */}
 				<Element name="start" className="element">
-					<HomePage />
+					<HomePage profiles={profiles} loading={loading} />
 				</Element>
 				{/* -- Section - Resume -- */}
 				<Element name="resume" className="element">
