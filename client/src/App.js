@@ -14,7 +14,7 @@ import ProtectedRoute from "utils/RouterProtector";
 // Import Font Awesome Icons Set
 import "font-awesome/css/font-awesome.min.css";
 // Layouts
-import { DashboardLayout, HomeLayout } from "layouts";
+import { DashboardLayout, HomeLayout } from "containers";
 //import pages;
 import { Login, Register, NotFound } from "views/pages";
 
