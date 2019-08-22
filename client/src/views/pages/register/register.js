@@ -159,12 +159,6 @@ class Register extends Component {
 										<li>
 											<Icon type="facebook" />
 										</li>
-										<li>
-											<Icon type="github" />
-										</li>
-										<li>
-											<Icon type="twitter" />
-										</li>
 									</ul>
 								</div>
 							</Form>

@@ -32,7 +32,7 @@ function HomeLayout() {
 
 			{/* -- Header -- */}
 			<div id="header" className="bg-white hidden-sm hidden-xs">
-				<Header />
+				<Header profiles={profiles} loading={loading} />
 			</div>
 			{/* -- Start Sections -- */}
 			<div id="content" className="bg-white">
@@ -42,7 +42,7 @@ function HomeLayout() {
 				</Element>
 				{/* -- Section - Resume -- */}
 				<Element name="resume" className="element">
-					<HomeAbout />
+					<HomeAbout profiles={profiles} loading={loading}/>
 				</Element>
 				{/* -- Section - Portfolio -- */}
 				<Element name="portfolio" className="element">
