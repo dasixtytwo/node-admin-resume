@@ -9,7 +9,7 @@ export default function HomeContact() {
 
 			{/*-- Contact Box --*/}
 			<ScrollAnimation
-				animatein="flipInY"
+				animateIn="flipInY"
 				className="contact-box bg-secondary dark"
 			>
 				<h1>
