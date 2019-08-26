@@ -1,27 +1,30 @@
 import React, { Fragment } from "react";
-
+import ScrollAnimation from "react-animate-on-scroll";
 import backgrounImg from "assets/images/it-bg01.jpg";
 
-export default function HomePage({ profiles, loading }) {
+export default function HomePage({ profiles }) {
 	return (
 		<Fragment>
-			{(profiles === null || loading) && (
-				<idv>
+			{/*(profiles === null || loading) && (
+				<div>
 					<h2>Loading...</h2>
-				</idv>
-			)}
+				</div>
+			)*/}
 			{profiles && (
 				<div
 					id="start"
 					className="section fullheight bg-secondary dark padding-v-60"
 				>
 					{/* -- BG Image -- */}
-					<div className="bg-image animated infinite zooming">
+					<ScrollAnimation
+						animateIn="zoomIn"
+						className="bg-image infinite zooming"
+					>
 						<img src={backgrounImg} alt="..." />
-					</div>
+					</ScrollAnimation>
 
-					{profiles.map(profile => (
-						<Fragment>
+					{profiles.map((profile, i) => (
+						<Fragment key={`profile-${i}`}>
 							<div className="container container-wide text-md">
 								<i className="icon-before fa fa-comments text-primary" />
 								Have you got any questions? Write to me at{" "}
@@ -40,11 +43,7 @@ export default function HomePage({ profiles, loading }) {
 									experienced Frontend / Web developer
 								</h5>
 								<span data-target="local-scroll">
-									<a
-										href="#resume"
-										className="btn btn-lg btn-primary animated"
-										data-animation="bounceIn"
-									>
+									<a href="#resume" className="btn btn-lg btn-primary">
 										<span>Go to my resume!</span>
 										<i className="ti-arrow-down" />
 									</a>

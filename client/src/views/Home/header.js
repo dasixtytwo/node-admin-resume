@@ -7,14 +7,14 @@ import {
 	scroller
 } from "react-scroll";
 
-export default function HomeHeader({ profiles, loading }) {
+export default function HomeHeader({ profiles }) {
 	return (
 		<Fragment>
-			{(profiles === null || loading) && (
+			{/*(profiles === null || loading) && (
 				<div>
 					<h2>loading...</h2>
 				</div>
-			)}
+			)*/}
 			{profiles && (
 				<Fragment>
 					{/* -- Logo -- */}
@@ -32,7 +32,7 @@ export default function HomeHeader({ profiles, loading }) {
 						<ul className="nav nav-vertical">
 							<li>
 								<Link
-									activeclassName="active"
+									activeClass="active"
 									to="start"
 									spy={true}
 									smooth={true}
@@ -43,7 +43,7 @@ export default function HomeHeader({ profiles, loading }) {
 							</li>
 							<li>
 								<Link
-									activeclassName="active"
+									activeClass="active"
 									to="resume"
 									spy={true}
 									smooth={true}
@@ -55,7 +55,7 @@ export default function HomeHeader({ profiles, loading }) {
 							</li>
 							<li>
 								<Link
-									activeclassName="active"
+									activeClass="active"
 									to="portfolio"
 									spy={true}
 									smooth={true}
@@ -67,7 +67,7 @@ export default function HomeHeader({ profiles, loading }) {
 							</li>
 							<li>
 								<Link
-									activeclassName="active"
+									activeClass="active"
 									to="posts"
 									spy={true}
 									smooth={true}
@@ -79,7 +79,7 @@ export default function HomeHeader({ profiles, loading }) {
 							</li>
 							<li>
 								<Link
-									activeclassName="active"
+									activeClass="active"
 									to="contact"
 									spy={true}
 									smooth={true}
