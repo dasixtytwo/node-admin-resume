@@ -13,6 +13,8 @@ import { clearCurrentProfile } from "actions/profileActions";
 import ProtectedRoute from "utils/RouterProtector";
 // Import Font Awesome Icons Set
 import "font-awesome/css/font-awesome.min.css";
+// Import Animations
+import "animate.css/animate.min.css";
 // Layouts
 import { DashboardLayout, HomeLayout } from "containers";
 //import pages;
