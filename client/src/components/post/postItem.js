@@ -3,11 +3,13 @@ import moment from "moment";
 import { Col } from "antd";
 import ScrollAnimation from "react-animate-on-scroll";
 
+import postImg from "assets/images/photos/post03.jpg";
+
 export default function PostItem({ post }) {
 	return (
-		<Col lg={4} sm={6} xs={12} className="post post-item masonry-item">
+		<Col lg={8} sm={12} xs={24} className="post post-item masonry-item">
 			<div className="post-photo">
-				<img src="assets/img/photos/post01.jpg" alt="..." />
+				<img src={postImg} alt="..." />
 			</div>
 			<ScrollAnimation animateIn="fadeInUp" className="post-content">
 				<div className="meta">

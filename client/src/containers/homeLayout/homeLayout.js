@@ -16,6 +16,8 @@ import HomeAbout from "views/home/about";
 import HomePortfolio from "views/home/portfolio";
 import HomePost from "views/home/posts";
 import HomeContact from "views/home/contact";
+import Loader from "components/loader/loader";
+import ContactForm from "components/contact/contactForm";
 
 function HomeLayout() {
 	const dataProfile = useSelector(state => state.profile);
@@ -23,7 +25,6 @@ function HomeLayout() {
 	const dispatch = useDispatch();
 
 	const { profiles, loading } = dataProfile;
-	const { post, posts } = dataPost;
 
 	useEffect(() => {
 		dispatch(getProfiles());
@@ -36,7 +37,7 @@ function HomeLayout() {
 	return (
 		<Fragment>
 			{/* -- Loader -- */}
-			{loading && <div id="page-loader" className="bg-white"></div>}
+			{loading && <Loader />}
 			{/* -- Header -- */}
 			<div id="header" className="bg-white hidden-sm hidden-xs">
 				<Header profiles={profiles} />
@@ -61,9 +62,11 @@ function HomeLayout() {
 				</Element>
 				{/* -- Section - Contact -- */}
 				<Element name="contact" className="element">
-					<HomeContact />
+					<HomeContact profiles={profiles} />
 				</Element>
 			</div>
+			{/*-- Messanger --*/}
+			<ContactForm />
 		</Fragment>
 	);
 }
