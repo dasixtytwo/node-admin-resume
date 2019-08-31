@@ -3,6 +3,7 @@ import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getProfiles } from "actions/profileActions";
 import { getPosts } from "actions/postActions";
+import { getProjects } from "actions/portfolioActions";
 import {
 	Element,
 	animateScroll as scroll,
@@ -22,6 +23,7 @@ import ContactForm from "components/contact/contactForm";
 function HomeLayout() {
 	const dataProfile = useSelector(state => state.profile);
 	const dataPost = useSelector(state => state.post);
+	const dataProject = useSelector(state => state.project);
 	const dispatch = useDispatch();
 
 	const { profiles, loading } = dataProfile;
@@ -32,6 +34,10 @@ function HomeLayout() {
 
 	useEffect(() => {
 		dispatch(getPosts());
+	}, []);
+
+	useEffect(() => {
+		dispatch(getProjects());
 	}, []);
 
 	return (
@@ -54,7 +60,7 @@ function HomeLayout() {
 				</Element>
 				{/* -- Section - Portfolio -- */}
 				<Element name="portfolio" className="element">
-					<HomePortfolio />
+					<HomePortfolio projects={dataProject} />
 				</Element>
 				{/* -- Section - Blog -- */}
 				<Element name="posts" className="element">
