@@ -2,14 +2,15 @@ import React from "react";
 import { Col } from "antd";
 
 export default function PortfolioItem({ project }) {
-	const randomCol = Math.floor(Math.random() * (12 - 6 + 1)) + 6;
+	const items = [6, 8, 12];
+	const randomCol = items[Math.floor(Math.random() * items.length)];
 
 	return (
 		<Col
 			lg={randomCol}
 			sm={12}
 			xs={24}
-			className="webdesign masonry-item margin-b-30"
+			className={`${project.category} masonry-item margin-b-30`}
 		>
 			<div className="gallery-item">
 				<div className="item-photo">
@@ -22,16 +23,9 @@ export default function PortfolioItem({ project }) {
 					<div className="item-hover bg-dark dark">
 						<div className="item-hover-content">
 							<a
-								href="/"
+								href={project.urlProject}
 								data-target="ajax-modal"
 								className="icon icon-sm icon-hover icon-circle icon-primary"
-							>
-								<i className="fa fa-link" />
-							</a>
-							<a
-								href="http://davideagosti.info"
-								target="_blank"
-								className="icon icon-sm icon-circle icon-white icon-hover"
 							>
 								<i className="fa fa-play" />
 							</a>
@@ -39,10 +33,12 @@ export default function PortfolioItem({ project }) {
 					</div>
 				</div>
 				<div className="item-title">
-					<a href="/" className="title">
-						{project.title}
-					</a>
-					<span className="caption text-muted">Mockups</span>
+					<div className="title">{project.title}</div>
+					<span className="caption text-muted">
+						<a href={`http://${project.urlProject}`} target="_blank">
+							{project.urlProject}
+						</a>
+					</span>
 				</div>
 			</div>
 		</Col>

@@ -51,6 +51,7 @@ exports.update_project = (req, res) => {
 				.split(" ")
 				.join("-")
 				.toLowerCase(),
+			urlProject: req.body.urlProject,
 			description: req.body.description,
 			projectImage: req.file.filename,
 			category: req.body.category,
@@ -103,6 +104,7 @@ exports.add_project = (req, res) => {
 	const newProject = new Portfolio({
 		title: req.body.title,
 		slug: slug,
+		urlProject: req.body.urlProject,
 		description: req.body.description,
 		projectImage: req.file.filename,
 		category: req.body.category,

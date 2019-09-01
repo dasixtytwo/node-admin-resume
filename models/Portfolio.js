@@ -14,6 +14,10 @@ const postSchema = new Schema({
 	slug: {
 		type: String,
 	},
+	urlProject: {
+		type: String,
+		required: true,
+	},
 	description: {
 		type: String,
 	},
