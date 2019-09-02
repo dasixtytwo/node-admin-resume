@@ -3,7 +3,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Row,Col } from "antd";
 import { TiMessageTyping, TiNotesOutline, TiCalendarOutline, TiDirections, TiFlowChildren } from "react-icons/ti";
 
-export default function HomeAbout({profiles}) {
+export default function HomeAbout({profiles, isLoading}) {
   return (
     <Fragment>
     {/*(profiles === null || loading) && (
@@ -11,7 +11,7 @@ export default function HomeAbout({profiles}) {
         <h2>Loading...</h2>
       </div>
     )*/}
-    {profiles && (
+    {profiles && !isLoading && (
       profiles.map(profile => (
         <div key="aboutMe" id="resume" className="section padding-v-60">
           {/*-- Content --*/}

@@ -1,8 +1,8 @@
-import { GET_MAILS, GET_MAIL, DELETE_MAIL } from "actions/types";
+import { MAIL_LOADING, GET_MAILS, GET_MAIL, DELETE_MAIL } from "actions/types";
 
 const initialState = {
 	mails: [],
-	mail: [],
+	mail: {},
 	loading: false,
 };
 
