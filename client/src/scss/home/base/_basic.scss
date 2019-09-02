@@ -417,7 +417,6 @@
 .min-fullheight {
 	min-height: 100vh;
 }
-
 .icon-before {
 	margin-right: 8px;
 }
@@ -428,7 +427,6 @@
 	margin-right: 8px;
 	margin-left: 8px;
 }
-
 .sep-line {
 	position: relative;
 	z-index: 1;
@@ -438,30 +436,25 @@
 	margin: 10px 0;
 	background: rgba($black-color, 0.1);
 }
-
 .dark .sep-line {
 	background: rgba($white-color, 0.2);
 }
-
 .v-center {
 	position: relative;
 	top: 50%;
 	@include transform(translate3d(0, -50%, 0));
 	@include transition(all 0.3s);
 }
-
 .v-bottom {
 	position: relative;
 	top: 95%;
 	@include transform(translate3d(0, -100%, 0));
 	@include transition(all 0.3s);
 }
-
 .v-center-items {
 	@include flex-display(flex, row);
 	@include align-items(center);
 }
-
 .bg-image {
 	position: absolute;
 	top: 0;
@@ -482,7 +475,6 @@
 .bg-fixed {
 	background-attachment: fixed;
 }
-
 .bg-video {
 	position: absolute;
 	top: 0;
@@ -493,7 +485,6 @@
 .bg-video-placeholder {
 	display: none;
 }
-
 .bg-map {
 	position: absolute;
 	top: 0;
@@ -501,7 +492,6 @@
 	width: 100%;
 	height: 100%;
 }
-
 .bg-slideshow {
 	position: absolute;
 	top: 0;
@@ -513,7 +503,6 @@
 	background-repeat: no-repeat;
 	z-index: 0;
 }
-
 .bg-slideshow + * {
 	position: relative;
 }
@@ -551,12 +540,24 @@
 	padding-right: 0;
 }
 
-.row.padding-lg {
+.ant-row.padding-lg {
 	margin-left: -40px;
 	margin-right: -40px;
 }
-.row.padding-lg > article[class^="col"],
-.row.padding-lg > *[class*=" col"] {
+.ant-row.padding-lg > div[class^="ant-col"],
+.ant-row.padding-lg > *[class*=" ant-col"] {
 	padding-left: 40px;
 	padding-right: 40px;
+}
+
+.ant-row.padding-md > div[class^="ant-col"],
+.ant-row.padding-md > *[class*=" ant-col"] {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.ant-row.padding-sm > div[class^="ant-col"],
+.ant-row.padding-sm > *[class*=" ant-col"] {
+	padding-left: 15px;
+	padding-right: 15px;
 }

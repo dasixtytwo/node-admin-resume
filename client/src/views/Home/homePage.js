@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import backgrounImg from "assets/images/it-bg01.jpg";
 
-export default function HomePage({ profiles }) {
+export default function HomePage({ profiles, isLoading }) {
 	return (
 		<Fragment>
 			{/*(profiles === null || loading) && (
@@ -10,7 +10,7 @@ export default function HomePage({ profiles }) {
 					<h2>Loading...</h2>
 				</div>
 			)*/}
-			{profiles && (
+			{profiles && !isLoading && (
 				<div
 					id="start"
 					className="section fullheight bg-secondary dark padding-v-60"

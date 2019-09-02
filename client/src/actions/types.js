@@ -16,3 +16,16 @@ export const DELETE_POST = "DELETE_POST";
 // Redux Upload file action
 export const UPLOAD_DOCUMENT_SUCCESS = "UPLOAD_DOCUMENT_SUCCESS";
 export const UPLOAD_DOCUMENT_FAIL = "UPLOAD_DOCUMENT_FAIL";
+// redux Portfolio actions
+export const PROJECT_LOADING = "PROJECT_LOADING";
+export const GET_PROJECTS = "GET_PROJECTS";
+export const GET_PROJECT = "GET_PROJECT";
+export const ADD_PROJECT = "ADD_PROJECT";
+export const EDIT_PROJECT = "EDIT_PROJECT";
+export const UPDATE_PROJECT = "UPDATE_PROJECT";
+export const DELETE_PROJECT = "DELETE_PROJECT";
+// Redux Mails actions
+export const MAIL_LOADING = "MAIL_LOADING";
+export const GET_MAILS = "GET_MAILS";
+export const GET_MAIL = "GET_MAIL";
+export const DELETE_MAIL = "DELETE_MAIL";
