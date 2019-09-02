@@ -4,10 +4,10 @@ import {
 	Link,
 	animateScroll as scroll,
 	scrollSpy,
-	scroller
+	scroller,
 } from "react-scroll";
 
-export default function HomeHeader({ profiles }) {
+export default function HomeHeader({ profiles, isLoading }) {
 	return (
 		<Fragment>
 			{/*(profiles === null || loading) && (
@@ -15,7 +15,7 @@ export default function HomeHeader({ profiles }) {
 					<h2>loading...</h2>
 				</div>
 			)*/}
-			{profiles && (
+			{profiles && !isLoading && (
 				<Fragment>
 					{/* -- Logo -- */}
 					<div className="logo bg-primary">
