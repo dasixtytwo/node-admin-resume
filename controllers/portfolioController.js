@@ -42,19 +42,25 @@ exports.project_by_id = (req, res) => {
 // @desc    Update a note identified by the noteId in the request
 // @access  Public
 exports.update_project = (req, res) => {
+	// destructuring
+	const { title, urlProject, description, category } = req.body;
+
+	// create dinamically the slug by title
+	const slug = title
+		.split(" ")
+		.join("-")
+		.toLowerCase();
+
 	// Find note and update it with the request body
 	Portfolio.findByIdAndUpdate(
 		req.params.id,
 		{
-			title: req.body.title,
-			slug: req.body.title
-				.split(" ")
-				.join("-")
-				.toLowerCase(),
-			urlProject: req.body.urlProject,
-			description: req.body.description,
+			title,
+			slug,
+			urlProject,
+			description,
 			projectImage: req.file.filename,
-			category: req.body.category,
+			category,
 			user: req.user.id,
 		},
 		{ new: true },
@@ -88,6 +94,14 @@ exports.update_project = (req, res) => {
 // @access  Private
 exports.add_project = (req, res) => {
 	const { errors, isValid } = validatePortfolioInput(req.body);
+	// destructuring
+	const { title, urlProject, description, category } = req.body;
+
+	// create dinamically the slug by title
+	const slug = title
+		.split(" ")
+		.join("-")
+		.toLowerCase();
 
 	// Check Validation
 	if (!isValid) {
@@ -95,19 +109,14 @@ exports.add_project = (req, res) => {
 		return res.status(400).json(errors);
 	}
 
-	const slug = req.body.title
-		.split(" ")
-		.join("-")
-		.toLowerCase();
-
 	// Get fields
 	const newProject = new Portfolio({
-		title: req.body.title,
-		slug: slug,
-		urlProject: req.body.urlProject,
-		description: req.body.description,
+		title,
+		slug,
+		urlProject,
+		description,
 		projectImage: req.file.filename,
-		category: req.body.category,
+		category,
 		user: req.user.id,
 	});
 

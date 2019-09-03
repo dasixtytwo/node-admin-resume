@@ -46,6 +46,8 @@ exports.blog_by_slug = (req, res) => {
 // @access  Private
 exports.create_post = (req, res) => {
 	const { errors, isValid } = validatePostInput(req.body);
+	// Destructuring
+	const { title, subtitle, bodyText, category, author, avatar } = req.body;
 
 	// Check Validation
 	if (!isValid) {
@@ -53,22 +55,23 @@ exports.create_post = (req, res) => {
 		return res.status(400).json(errors);
 	}
 
-	const slug = req.body.title
+	// create dinamically the slug by title
+	const slug = title
 		.split(" ")
 		.join("-")
 		.toLowerCase();
 
 	// Get fields
 	const newPost = new Post({
-		title: req.body.title,
-		subtitle: req.body.subtitle,
-		slug: slug,
+		title,
+		subtitle,
+		slug,
 		postImage: req.file.filename,
-		bodyText: req.body.bodyText,
-		category: req.body.category,
-		author: req.body.author,
+		bodyText,
+		category,
+		author,
 		user: req.user.id,
-		avatar: req.body.avatar,
+		avatar,
 	});
 
 	Post.findOne({
