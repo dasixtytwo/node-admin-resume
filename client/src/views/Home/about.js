@@ -3,7 +3,8 @@ import ScrollAnimation from "react-animate-on-scroll";
 import { Row,Col } from "antd";
 import { TiMessageTyping, TiNotesOutline, TiCalendarOutline, TiDirections, TiFlowChildren } from "react-icons/ti";
 
-export default function HomeAbout({profiles, isLoading}) {
+export default function HomeAbout({dataProfile}) {
+  const { profiles, isLoading } = dataProfile;
   return (
     <Fragment>
     {/*(profiles === null || loading) && (

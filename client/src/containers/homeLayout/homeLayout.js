@@ -21,54 +21,45 @@ import Spinner from "components/loader/loader";
 import ContactForm from "components/contact/contactForm";
 
 function HomeLayout() {
-	const dataProfile = useSelector(state => state.profile);
-	const dataPost = useSelector(state => state.post);
-	const dataProject = useSelector(state => state.project);
+	const fetchData = useSelector(state => state);
 	const dispatch = useDispatch();
 
-	const { loading, profiles } = dataProfile;
+	const { profile, post, project } = fetchData;
 
 	useEffect(() => {
 		dispatch(getProfiles());
-	}, []);
-
-	useEffect(() => {
 		dispatch(getPosts());
-	}, []);
-
-	useEffect(() => {
 		dispatch(getProjects());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<Fragment>
-			{loading ? (
-				<Spinner />
-			) : (
+			{profile.isLoading === true && <Spinner />}
+			{profile.isLoading === false && (
 				<Fragment>
 					<div id="header" className="bg-white hidden-sm hidden-xs">
-						<Header profiles={profiles} isLoading={loading} />
+						<Header dataProfile={profile} />
 					</div>
 					<div id="content" className="bg-white">
 						{/* -- Section - Home -- */}
 						<Element name="start" className="element">
-							<HomePage profiles={profiles} isLoading={loading} />
+							<HomePage dataProfile={profile} />
 						</Element>
 						{/* -- Section - Resume -- */}
 						<Element name="resume" className="element">
-							<HomeAbout profiles={profiles} isLoading={loading} />
+							<HomeAbout dataProfile={profile} />
 						</Element>
 						{/* -- Section - Portfolio -- */}
 						<Element name="portfolio" className="element">
-							<HomePortfolio dataProjects={dataProject} />
+							<HomePortfolio dataProject={project} />
 						</Element>
 						{/* -- Section - Blog -- */}
 						<Element name="posts" className="element">
-							<HomePost posts={dataPost} isLoading={loading} />
+							<HomePost dataPost={post} />
 						</Element>
 						{/* -- Section - Contact -- */}
 						<Element name="contact" className="element">
-							<HomeContact profiles={profiles} isLoading={loading} />
+							<HomeContact dataProfile={profile} />
 						</Element>
 					</div>
 					<ContactForm />

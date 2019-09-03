@@ -3,10 +3,12 @@ import ScrollAnimation from "react-animate-on-scroll";
 import ShowMap from "components/map/showMap";
 import { TiMail } from "react-icons/ti";
 
-export default function HomeContact({ profiles, isLoading }) {
+export default function HomeContact({ dataProfile }) {
+	const { profiles, isLoading } = dataProfile;
 	return (
 		<Fragment>
-			{profiles && !isLoading &&
+			{profiles &&
+				!isLoading &&
 				profiles.map(profile => (
 					<div
 						key="contactPage"

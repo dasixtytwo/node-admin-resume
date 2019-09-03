@@ -6,7 +6,7 @@ import {
 	CLEAR_ERRORS,
 	GET_POSTS,
 	GET_POST,
-	POST_LOADING,
+	IS_LOADING,
 	DELETE_POST,
 } from "actions/types";
 
@@ -145,7 +145,7 @@ export const deleteComment = (postId, commentId) => dispatch => {
 // Set loading state
 export const setPostLoading = () => {
 	return {
-		type: POST_LOADING,
+		type: IS_LOADING,
 	};
 };
 

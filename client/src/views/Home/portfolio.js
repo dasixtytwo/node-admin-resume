@@ -2,16 +2,16 @@ import React, { Fragment } from "react";
 import Masonry from "react-masonry-component";
 import PortfolioItem from "components/portfolio/portfolioItem";
 
-export default function HomePortfolio({ dataProjects }) {
+export default function HomePortfolio({ dataProject }) {
 	const masonryOptions = {
 		transitionDuration: 0,
 	};
 
-	const { projects, loading, project } = dataProjects;
+	const { projects, isLoading } = dataProject;
 
 	return (
 		<Fragment>
-			{projects && !loading && (
+			{!isLoading && (
 				<div id="portfolio" className="section bg-grey padding-v-60">
 					{/*-- Content --*/}
 					<div className="container container-wide">
@@ -24,22 +24,22 @@ export default function HomePortfolio({ dataProjects }) {
 								data-filter-grid="#portfolio-list"
 							>
 								<li className="active">
-									<a href="#" data-filter="*">
+									<a href="/" data-filter="*">
 										All
 									</a>
 								</li>
 								<li>
-									<a href="#" data-filter=".webdesign">
+									<a href="/" data-filter=".webdesign">
 										Webdesign
 									</a>
 								</li>
 								<li>
-									<a href="#" data-filter=".development">
+									<a href="/" data-filter=".development">
 										Development
 									</a>
 								</li>
 								<li>
-									<a href="#" data-filter=".graphic">
+									<a href="/" data-filter=".graphic">
 										Graphic Design
 									</a>
 								</li>
@@ -52,6 +52,7 @@ export default function HomePortfolio({ dataProjects }) {
 							className="ant-row masonry padding-sm"
 						>
 							{/*-- Masonry Element --*/}
+
 							{projects.map((project, i) => (
 								<PortfolioItem key={`project-${i}`} project={project} />
 							))}
