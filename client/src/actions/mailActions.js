@@ -1,6 +1,12 @@
 import axios from "axios";
 
-import { GET_ERRORS, GET_MAILS, GET_MAIL, DELETE_MAIL } from "actions/types";
+import {
+	IS_LOADING,
+	GET_ERRORS,
+	GET_MAILS,
+	GET_MAIL,
+	DELETE_MAIL,
+} from "actions/types";
 
 // Send email from the contact form
 export const sendMsgContact = userData => dispatch => {
@@ -80,6 +86,6 @@ export const deleteMail = id => dispatch => {
 // Set loading state
 export const setMailLoading = () => {
 	return {
-		type: MAIL_LOADING,
+		type: IS_LOADING,
 	};
 };

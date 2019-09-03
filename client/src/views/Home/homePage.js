@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
 import backgrounImg from "assets/images/it-bg01.jpg";
 
-export default function HomePage({ profiles, isLoading }) {
+export default function HomePage({ dataProfile }) {
+	const { profiles, isLoading } = dataProfile;
 	return (
 		<Fragment>
 			{/*(profiles === null || loading) && (
@@ -18,7 +19,8 @@ export default function HomePage({ profiles, isLoading }) {
 					{/* -- BG Image -- */}
 					<ScrollAnimation
 						animateIn="zoomIn"
-						className="bg-image infinite zooming"
+						animateOnce="true"
+						className="bg-image"
 					>
 						<img src={backgrounImg} alt="..." />
 					</ScrollAnimation>

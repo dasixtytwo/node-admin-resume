@@ -7,14 +7,10 @@ import {
 	scroller,
 } from "react-scroll";
 
-export default function HomeHeader({ profiles, isLoading }) {
+export default function HomeHeader({ dataProfile }) {
+	const { profiles, isLoading } = dataProfile;
 	return (
 		<Fragment>
-			{/*(profiles === null || loading) && (
-				<div>
-					<h2>loading...</h2>
-				</div>
-			)*/}
 			{profiles && !isLoading && (
 				<Fragment>
 					{/* -- Logo -- */}

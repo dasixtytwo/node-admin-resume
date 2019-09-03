@@ -6,10 +6,18 @@
 ------------------------------------------- */
 
 .#{$class-prefix}-loader-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
   @include flex-display(flex, column, nowrap);
   @include justify-content(center);
   @include align-items(center);
   @include flex(1);
+  z-index: 10000;
 
   & .ant-spin {
     margin: 0;
@@ -327,7 +335,7 @@ pre {
 /* Buttons
 	-------------------------------------------- */
 
-.btn {
+.ant-btn {
   position: relative;
   padding: 15px 32px 17px;
   border-radius: 30px;
@@ -346,14 +354,14 @@ pre {
   -o-transition: all 0.2s ease-in-out;
 }
 
-.btn > * {
+.ant-btn > * {
   display: inline-block;
   transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
 }
-.btn > *:nth-child(2) {
+.ant-btn > *:nth-child(2) {
   position: absolute;
   top: 48%;
   transform: translate3d(0, -50%, 0);
@@ -362,17 +370,17 @@ pre {
   opacity: 0;
   visibility: hidden;
 }
-.btn:hover > *:nth-child(1),
-.btn:focus > *:nth-child(1) {
+.ant-btn:hover > *:nth-child(1),
+.ant-btn:focus > *:nth-child(1) {
   transform: translateX(-10px);
 }
-.btn:hover > *:nth-child(2),
-.btn:focus > *:nth-child(2) {
+.ant-btn:hover > *:nth-child(2),
+.ant-btn:focus > *:nth-child(2) {
   opacity: 1;
   visibility: visible;
 }
 
-.btn:before {
+.ant-btn:before {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -382,7 +390,7 @@ pre {
   content: " ";
   opacity: 0;
 }
-.btn:focus:before {
+.ant-btn:focus:before {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-duration: 0.6s;
@@ -412,47 +420,47 @@ pre {
   }
 }
 
-.btn.active.focus,
-.btn.active:focus,
-.btn.focus,
-.btn.focus:active,
-.btn:active:focus,
-.btn:focus {
+.ant-btn.active.focus,
+.ant-btn.active:focus,
+.ant-btn.focus,
+.ant-btn.focus:active,
+.ant-btn:active:focus,
+.ant-btn:focus {
   outline: none;
 }
 
-.btn > span {
+.ant-btn > span {
   position: relative;
   z-index: 1;
 }
 
 /* Colors */
 
-.btn-green,
-.btn-success {
+.ant-btn-green,
+.ant-btn-success {
   background-color: #85b448;
 }
-.btn-green:hover,
-.btn-success:hover,
-.btn-green:focus,
-.btn-success:focus {
+.ant-btn-green:hover,
+.ant-btn-success:hover,
+.ant-btn-green:focus,
+.ant-btn-success:focus {
   color: #85b448;
 }
-.btn-blue,
-.btn-info {
+.ant-btn-blue,
+.ant-btn-info {
   background-color: #3aa8db;
 }
-.btn-blue:hover,
-.btn-info:hover,
-.btn-blue:focus,
-.btn-info:focus {
+.ant-btn-blue:hover,
+.ant-btn-info:hover,
+.ant-btn-blue:focus,
+.ant-btn-info:focus {
   color: #3aa8db;
 }
 .btn-orange,
 .btn-warning {
   background-color: #d86a39;
 }
-.btn-orange:hover,
+.ant-btn-orange:hover,
 .btn-warning:hover,
 .btn-orange:focus,
 .btn-warning:focus {
@@ -574,23 +582,23 @@ pre {
   color: #352a47;
 }
 
-.btn:hover,
-.btn:focus {
+.ant-btn:hover,
+.ant-btn:focus {
   background: #fff;
 }
 
-.btn-default {
+.ant-btn-default {
   color: #282828;
   background-color: #f8f8f8;
 }
-.btn-white {
+.ant-btn-white {
   color: #282828;
 }
-.btn-link {
+.ant-btn-link {
   color: inherit;
 }
-.btn-link:hover,
-.btn-link:focus {
+.ant-btn-link:hover,
+.ant-btn-link:focus {
   color: inherit;
   text-decoration: none;
   background: transparent;
@@ -598,7 +606,7 @@ pre {
 
 /* Sizes */
 
-.btn-lg {
+.ant-btn-lg {
   padding: 19px 36px 21px;
   border-radius: 40px;
   font-size: 14px;

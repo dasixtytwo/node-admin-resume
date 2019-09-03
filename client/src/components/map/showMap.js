@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Map, Marker, Popup, TileLayer, ZoomControl } from "react-leaflet";
-import _ from "lodash";
 
 export default function ShowMap({ location }) {
 	const position = [location.lat, location.lon];

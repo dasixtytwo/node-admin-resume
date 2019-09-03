@@ -1,29 +1,29 @@
-import { MAIL_LOADING, GET_MAILS, GET_MAIL, DELETE_MAIL } from "actions/types";
+import { IS_LOADING, GET_MAILS, GET_MAIL, DELETE_MAIL } from "actions/types";
 
 const initialState = {
 	mails: [],
 	mail: {},
-	loading: false,
+	isLoading: false,
 };
 
 export default function(state = initialState, action) {
 	switch (action.type) {
-		case MAIL_LOADING:
+		case IS_LOADING:
 			return {
 				...state,
-				loading: true,
+				isLoading: true,
 			};
 		case GET_MAILS:
 			return {
 				...state,
 				mails: action.payload,
-				loading: false,
+				isLoading: false,
 			};
 		case GET_MAIL:
 			return {
 				...state,
 				mail: action.payload,
-				loading: false,
+				isLoading: false,
 			};
 		case DELETE_MAIL:
 			return {

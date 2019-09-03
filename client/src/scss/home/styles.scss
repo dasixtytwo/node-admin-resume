@@ -10,7 +10,7 @@
 @import "layout/index";
 
 .bg-primary,
-.btn-primary,
+.ant-btn-primary,
 .progress-bar-primary,
 .te-primary:before,
 .icon-circle.icon-primary,
@@ -21,7 +21,6 @@
 #messenger-toggle:focus,
 .icon-white.icon-hover:hover,
 .icon-white.icon-hover:focus,
-.pace .pace-progress:before,
 .label-primary,
 .pagination > li > a:focus,
 .pagination > li > a:hover,
@@ -39,7 +38,6 @@
 .nav-panels > li.active > a,
 .nav-panels > li.active > a:focus,
 .nav-panels > li.active > a:hover,
-#page-loader:before,
 .owl-pagination .owl-page.active > span {
 	background-color: $primary-color;
 }
