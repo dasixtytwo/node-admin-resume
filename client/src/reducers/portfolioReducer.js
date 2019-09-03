@@ -4,33 +4,33 @@ import {
 	GET_PROJECT,
 	EDIT_PROJECT,
 	DELETE_PROJECT,
-	PROJECT_LOADING,
+	IS_LOADING,
 } from "actions/types";
 
 const initialState = {
 	projects: [],
 	project: {},
-	loading: false,
+	isLoading: false,
 };
 
 export default function(state = initialState, action) {
 	switch (action.type) {
-		case PROJECT_LOADING:
+		case IS_LOADING:
 			return {
 				...state,
-				loading: true,
+				isLoading: true,
 			};
 		case GET_PROJECTS:
 			return {
 				...state,
 				projects: action.payload,
-				loading: false,
+				isLoading: false,
 			};
 		case GET_PROJECT:
 			return {
 				...state,
 				project: action.payload,
-				loading: false,
+				isLoading: false,
 			};
 		case ADD_PROJECT:
 			return {

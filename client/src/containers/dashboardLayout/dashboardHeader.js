@@ -5,9 +5,9 @@ import React, { Fragment } from "react";
 
 function DashboardHeader() {
 	return (
-		<div>
+		<Fragment>
 			<h1>Admin Header</h1>
-		</div>
+		</Fragment>
 	);
 }
 

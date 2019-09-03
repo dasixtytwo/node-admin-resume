@@ -467,7 +467,8 @@
 	z-index: 0;
 }
 .bg-image > img {
-	display: none;
+	display: block;
+	height: 100% !important;
 }
 .bg-image + * {
 	position: relative;

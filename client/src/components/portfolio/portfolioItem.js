@@ -35,7 +35,11 @@ export default function PortfolioItem({ project }) {
 				<div className="item-title">
 					<div className="title">{project.title}</div>
 					<span className="caption text-muted">
-						<a href={`http://${project.urlProject}`} target="_blank">
+						<a
+							href={`http://${project.urlProject}`}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							{project.urlProject}
 						</a>
 					</span>

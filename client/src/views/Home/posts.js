@@ -2,7 +2,8 @@ import React, { Fragment } from "react";
 import PostItem from "components/post/postItem";
 import Masonry from "react-masonry-component";
 
-export default function HomePost({ posts, isLoading }) {
+export default function HomePost({ dataPost }) {
+	const { posts, isLoading } = dataPost;
 	const masonryOptions = {
 		transitionDuration: 0,
 	};
@@ -16,7 +17,7 @@ export default function HomePost({ posts, isLoading }) {
 							options={masonryOptions}
 							className="ant-row masonry padding-sm"
 						>
-							{posts.posts.map(post => (
+							{posts.map(post => (
 								<PostItem key={post.slug} post={post} />
 							))}
 						</Masonry>

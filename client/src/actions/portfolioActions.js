@@ -9,7 +9,7 @@ import {
 	EDIT_PROJECT,
 	UPDATE_PROJECT,
 	DELETE_PROJECT,
-	PROJECT_LOADING,
+	IS_LOADING,
 } from "actions/types";
 
 // Get Projects
@@ -109,7 +109,7 @@ export const deleteProject = id => dispatch => {
 // Set loading state
 export const setProjectLoading = () => {
 	return {
-		type: PROJECT_LOADING,
+		type: IS_LOADING,
 	};
 };
 
