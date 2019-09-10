@@ -37,6 +37,7 @@ exports.send_contact_mail = (req, res) => {
 		email: req.body.email,
 		message: req.body.message,
 	});
+
 	// Prepare the mail format to send
 	const mailOption = {
 		from: newMail.fullname,

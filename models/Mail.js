@@ -15,9 +15,6 @@ const mailSchema = new Schema({
   message: {
     type: String
   },
-  attach: {
-    type: String
-  },
   date: {
     type: Date,
     default: Date.now
