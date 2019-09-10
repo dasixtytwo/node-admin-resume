@@ -18,8 +18,8 @@ export default function HomePage({ dataProfile }) {
 				>
 					{/* -- BG Image -- */}
 					<ScrollAnimation
-						animateIn="zoomIn"
-						animateOnce="true"
+						animateIn="fadeIn"
+						animateOnce={true}
 						className="bg-image"
 					>
 						<img src={backgrounImg} alt="..." />
