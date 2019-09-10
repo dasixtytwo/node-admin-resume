@@ -9,7 +9,7 @@ const MailController = require("../../controllers/mailsController");
 // Uploader multer
 const storage = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, "./client/build/upload/files");
+		cb(null, "./client/public/upload/files");
 	},
 	filename: (req, file, cb) => {
 		cb(null, `${Date.now()}_${file.originalname}`);
