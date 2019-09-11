@@ -7,8 +7,7 @@ const creds = require("../config/mailer");
 
 // Transport nodemailer
 let smtpConfig = {
-	pool: true,
-	host: "smtp.ethereal.email",
+	host: "smtp.sendgrid.net",
 	port: 587,
 	secure: false, // only for 465 port
 	auth: {
@@ -63,4 +62,55 @@ exports.send_contact_mail = (req, res) => {
 			newMail.save().then(mail => res.json(mail));
 		}
 	});
+};
+
+// @route   GET api/v2/mails
+// @desc    Get all mails
+// @access  Public
+exports.all_mail = (req, res) => {
+	Mail.find()
+		.sort({ date: -1 })
+		.then(mail => res.json(mail))
+		.catch(err =>
+			res.status(404).json({
+				post: "No mails found.",
+			}),
+		);
+}; 
+
+// @route   GET api/v2/mails/mail/:id
+// @desc    Get mail by id
+// @access  Public
+exports.mail_by_id = (req, res) => {
+	Mail.findOne({
+		_id: req.params.id,
+	})
+		.then(mail => {
+			if (!mail) {
+				errors.nopost = "No mail or the ID is incorrect";
+				res.status(404).json(errors);
+			}
+			res.json(mail);
+		})
+		.catch(err =>
+			res.status(404).json({
+				mail: "No mail found with this ID.",
+			}),
+		);
+};
+
+// @route   DELETE api/v2/mail/delete/:id
+// @desc    Delete mail
+// @access  Private
+exports.delete_mail = (req, res) => {
+	Mail.findOne({ _id: req.params.id })
+		.then(mail => {
+			// delete
+			mail.remove().then(() => res.json({ success: true }));
+		})
+		.catch(err =>
+			res.status(404).json({
+				mail: "No mail found!",
+			}),
+		);
 };
