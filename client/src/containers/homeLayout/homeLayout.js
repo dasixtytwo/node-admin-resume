@@ -11,7 +11,7 @@ import {
   scroller
 } from "react-scroll";
 // Import View Sections
-import Header from "views/home/header.js";
+import Header from "views/home/header";
 import HomePage from "views/home/homePage";
 import HomeAbout from "views/home/about";
 import HomePortfolio from "views/home/portfolio";
