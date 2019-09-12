@@ -9,15 +9,14 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "yarn install --prefix client && yarn run build --prefix client",
-    "post-build": "yarn install --prefix client && yarn run build --prefix client"
+    "heroku-postbuild": "cd client && yarn install --only=dev && yarn install && yarn run build",
+    "post-build": "cd client && yarn install --only=dev && yarn install && yarn run build"
   },
   "author": "Davide Agosti",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "gravatar": "^1.8.0",
     "jsonwebtoken": "^8.5.1",
@@ -29,6 +28,7 @@
     "validator": "^11.1.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.1",
     "babel-eslint": "^10.0.2",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^17.1.1",
