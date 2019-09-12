@@ -17,9 +17,9 @@ const app = express();
 
 // Body parser middleware
 app.use(
-	bodyParser.urlencoded({
-		extended: false,
-	}),
+  bodyParser.urlencoded({
+    extended: false
+  })
 ); // parse application/x-www-form-urlencoded
 app.use(bodyParser.json()); // parse application/json
 
@@ -31,20 +31,20 @@ require("./config/passport")(passport); // Passport config
 // by default, you need to set it to false.
 //Configure Mongoose Promises
 mongoose
-	.set("useFindAndModify", false)
-	.connect(db, { useNewUrlParser: true })
-	.then(() => console.log("MongoDB connected"))
-	.catch(err => console.log(err));
+  .set("useFindAndModify", false)
+  .connect(db, { useNewUrlParser: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch(err => console.log(err));
 
 // Middleware
 app.use(passport.initialize()); // Passport middleware
 
 // define a route to download a file
 app.get("/download/:file(*)", (req, res) => {
-	var file = req.params.file;
-	var fileLocation = path.join(__dirname + "/client/public/upload/files", file);
-	console.log(fileLocation);
-	res.download(fileLocation, file);
+  var file = req.params.file;
+  var fileLocation = path.join(__dirname + "/client/build/upload/files", file);
+  console.log(fileLocation);
+  res.download(fileLocation, file);
 });
 
 // Routes
@@ -56,12 +56,12 @@ app.use("/api/v2/projects", projects); // Use Portfolio routes in application
 
 // Server static assets, used if in production
 if (process.env.NODE_ENV === "production") {
-	// Serve static files from the React app
-	app.use(express.static(path.join(__dirname, "client/build"))); // Provide static directory for frontend, like CSS, JS
+  // Serve static files from the React app
+  app.use(express.static(path.join(__dirname, "client/build"))); // Provide static directory for frontend, like CSS, JS
 
-	app.get("*", (req, res) => {
-		res.sendFile(path.join(__dirname + "/client/build/index.html"));
-	});
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
+  });
 }
 
 // Server
