@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Personal website",
   "main": "server.js",
+  "engines": {
+    "npm": "6.10.2",
+    "node": "12.9.1"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
