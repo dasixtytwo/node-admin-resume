@@ -9,38 +9,38 @@ const portfolioControllers = require("../../controllers/portfolioController");
 
 // Path wher Storage file uploaded
 const storage = multer.diskStorage({
-	destination: (req, file, cb) => {
-		cb(null, "./client/public/upload/images/projects");
-	},
-	filename: (req, file, cb) => {
-		cb(null, `${Date.now()}_${file.originalname}`);
-	},
+  destination: (req, file, cb) => {
+    cb(null, "./client/build/upload/images/projects");
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}_${file.originalname}`);
+  }
 });
 // File filter for authorize just some file
 const fileFilter = (req, file, cb) => {
-	// Reject file
-	if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-		cb(null, true);
-	} else {
-		cb(null, "Only jpg/png files are allowed!");
-	}
+  // Reject file
+  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
+    cb(null, true);
+  } else {
+    cb(null, "Only jpg/png files are allowed!");
+  }
 };
 // Upload file
 const upload = multer({
-	storage: storage,
-	limits: {
-		filesize: 1024 * 1024 * 2, // 2MB Max size
-	},
-	fileFilter: fileFilter,
+  storage: storage,
+  limits: {
+    filesize: 1024 * 1024 * 2 // 2MB Max size
+  },
+  fileFilter: fileFilter
 });
 
 // @route  GET api/v2/projects/test
 // @desc   Test portfolio route
 // @access Public
 router.get("/test", (req, res) =>
-	res.json({
-		msg: "Portfolio Works",
-	}),
+  res.json({
+    msg: "Portfolio Works"
+  })
 );
 
 // @route   GET api/v2/projects
@@ -57,35 +57,35 @@ router.get("/project/:id", portfolioControllers.project_by_id);
 // @desc    Create project
 // @access  Private
 router.post(
-	"/create",
-	upload.single("projectImage"),
-	passport.authenticate("jwt", {
-		session: false,
-	}),
-	portfolioControllers.add_project,
+  "/create",
+  upload.single("projectImage"),
+  passport.authenticate("jwt", {
+    session: false
+  }),
+  portfolioControllers.add_project
 );
 
 // @route   GET api/v2/projects/update/:id
 // @desc    Update portfolio by id
 // @access  Private
 router.put(
-	"/update/:id",
-	upload.single("projectImage"),
-	passport.authenticate("jwt", {
-		session: false,
-	}),
-	portfolioControllers.update_project,
+  "/update/:id",
+  upload.single("projectImage"),
+  passport.authenticate("jwt", {
+    session: false
+  }),
+  portfolioControllers.update_project
 );
 
 // @route   DELETE api/v2/projects/:id
 // @desc    Remove project
 // @access  Private
 router.delete(
-	"/delete/:id",
-	passport.authenticate("jwt", {
-		session: false,
-	}),
-	portfolioControllers.delete_project,
+  "/delete/:id",
+  passport.authenticate("jwt", {
+    session: false
+  }),
+  portfolioControllers.delete_project
 );
 
 module.exports = router;

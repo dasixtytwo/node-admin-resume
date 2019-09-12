@@ -53,6 +53,10 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "npm": "6.10.2",
+    "node": "12.9.1"
+  },
   "keywords": [],
   "author": "Davide Agosti <support@davideagosti.info> (http://davideagosti.info/)",
   "license": "MIT",
