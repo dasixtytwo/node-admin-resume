@@ -11,14 +11,14 @@ import {
   scroller
 } from "react-scroll";
 // Import View Sections
-import Header from "views/home/header";
+import Header from "../../views/home/header";
 import HomePage from "views/home/homePage";
-import HomeAbout from "views/home/about";
-import HomePortfolio from "views/home/portfolio";
-import HomePost from "views/home/posts";
-import HomeContact from "views/home/contact";
-import Spinner from "components/loader/loader";
-import ContactForm from "components/contact/contactForm";
+import HomeAbout from "../../views/home/about";
+import HomePortfolio from "../../views/home/portfolio";
+import HomePost from "../../views/home/posts";
+import HomeContact from "../../views/home/contact";
+import Spinner from "../../components/loader/loader";
+import ContactForm from "../../components/contact/contactForm";
 
 function HomeLayout() {
   const fetchData = useSelector(state => state);
