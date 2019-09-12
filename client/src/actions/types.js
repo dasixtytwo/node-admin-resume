@@ -1,8 +1,8 @@
-// Redux Loadng
+// Redux actions
 export const IS_LOADING = "IS_LOADING";
-// Redux User & Profile actions
 export const GET_ERRORS = "GET_ERRORS";
 export const CLEAR_ERRORS = "CEAR_ERRORS";
+// Redux User & Profile actions
 export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const GET_PROFILE = "GET_PROFILE";
 export const PROFILE_NOT_FOUND = "PROFILE_NOT_FOUND";
@@ -24,6 +24,7 @@ export const EDIT_PROJECT = "EDIT_PROJECT";
 export const UPDATE_PROJECT = "UPDATE_PROJECT";
 export const DELETE_PROJECT = "DELETE_PROJECT";
 // Redux Mails actions
+export const SEND_MAIL = "SEND_MAIL";
 export const GET_MAILS = "GET_MAILS";
 export const GET_MAIL = "GET_MAIL";
 export const DELETE_MAIL = "DELETE_MAIL";
