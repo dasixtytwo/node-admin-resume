@@ -4,8 +4,8 @@
   "description": "Personal website",
   "main": "server.js",
   "engines": {
-    "npm": "6.10.2",
-    "node": "12.9.1"
+    "npm": "6.10.3",
+    "node": "12.10.0"
   },
   "scripts": {
     "client-install": "npm install --prefix client",

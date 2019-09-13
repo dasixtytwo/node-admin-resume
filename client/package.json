@@ -54,8 +54,8 @@
     ]
   },
   "engines": {
-    "npm": "6.10.2",
-    "node": "12.9.1"
+    "npm": "6.10.3",
+    "node": "12.10.0"
   },
   "keywords": [],
   "author": "Davide Agosti <support@davideagosti.info> (http://davideagosti.info/)",
