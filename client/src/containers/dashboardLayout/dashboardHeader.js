@@ -1,14 +1,36 @@
-import React, { Fragment } from "react";
-// Core Library
+import React, { useState } from 'react';
+import { Layout, Icon } from 'antd';
 
-// React/Redux
+const { Header, Content } = Layout;
 
-function DashboardHeader() {
+export default function DashboardHeader() {
+	const [stateCollapsed, setStateCollapsed] = useState();
+
+	const toggle = () => {
+		setStateCollapsed({
+			collapsed: !stateCollapsed
+		});
+	};
+
 	return (
-		<Fragment>
-			<h1>Admin Header</h1>
-		</Fragment>
+		<Layout>
+			<Header style={{ background: '#fff', padding: 0 }}>
+				<Icon
+					className='trigger'
+					type={stateCollapsed ? 'menu-unfold' : 'menu-fold'}
+					onClick={toggle}
+				/>
+			</Header>
+			<Content
+				style={{
+					margin: '24px 16px',
+					padding: 24,
+					background: '#fff',
+					minHeight: 280
+				}}
+			>
+				Content
+			</Content>
+		</Layout>
 	);
 }
-
-export default DashboardHeader;
