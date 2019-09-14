@@ -1,15 +1,14 @@
-import React from "react";
+import React from 'react';
+import { Layout } from 'antd';
 
-import DashboardAside from "containers/dashboardLayout/dashboardAside";
-import DashboardFooter from "containers/dashboardLayout/dashboardFooter";
-import DashboardHeader from "containers/dashboardLayout/dashboardHeader";
+import DashboardAside from 'containers/dashboardLayout/dashboardAside';
+import DashboardHeader from 'containers/dashboardLayout/dashboardHeader';
 
 export default function DashboardLayout() {
 	return (
-		<div className="app">
-			<DashboardHeader />
+		<Layout className='app'>
 			<DashboardAside />
-			<DashboardFooter />
-		</div>
+			<DashboardHeader />
+		</Layout>
 	);
 }
