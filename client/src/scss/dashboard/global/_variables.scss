@@ -1,8 +1,8 @@
-$font-family: "NoirPro", sans-serif;
+$font-family: 'NoirPro', sans-serif;
 
 // The prefix to use on all css classes.
 $class-prefix: da;
-
+$class-dashboard-prefix: da__dashboard;
 // The background colors for active and hover states for things like
 // list items or table cells.
 $item-active-bg: $primary-color;
@@ -172,7 +172,7 @@ $letter-spacing-lg: 6px;
 $letter-spacing-xl: 8px;
 
 //CRM Image Location
-$image_path: "../../assets/images";
+$image_path: '../../assets/images';
 
 // Apps Variables
 $app-sidebar-width: 230px;

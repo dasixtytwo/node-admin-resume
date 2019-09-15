@@ -1,25 +1,17 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { Layout, Menu, Icon } from 'antd';
-const { Sider } = Layout;
 
+const { Sider } = Layout;
 const { SubMenu } = Menu;
 
-const propTypes = {
-	children: PropTypes.node
-};
-
-const defaultProps = {};
-
-function DashboardAside({ collapsed }) {
-	console.log('collapsed:', collapsed);
+export default function DashboardAside({ collapsed }) {
 	return (
 		<Sider trigger={null} collapsible collapsed={collapsed.collapsed}>
-			<div className='logo' />
+			<div className='da__dashboard__logo' />
 			<Menu theme='dark' mode='inline' defaultSelectedKeys={['1']}>
 				<Menu.Item key='1'>
-					<Icon type='user' />
-					<span>User</span>
+					<Icon type='pie-chart' />
+					<span>Option 1</span>
 				</Menu.Item>
 				<SubMenu
 					key='sub1'
@@ -46,8 +38,3 @@ function DashboardAside({ collapsed }) {
 		</Sider>
 	);
 }
-
-DashboardAside.propTypes = propTypes;
-DashboardAside.defaultProps = defaultProps;
-
-export default DashboardAside;

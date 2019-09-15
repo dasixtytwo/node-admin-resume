@@ -19,17 +19,14 @@ export default function DashboardHeader() {
 			<Layout>
 				<Header style={{ background: '#fff', padding: 0 }}>
 					<Icon
-						className='trigger'
-						type={stateCollapsed ? 'menu-unfold' : 'menu-fold'}
+						className='da__dashboard__trigger'
+						type={stateCollapsed.collapsed ? 'menu-unfold' : 'menu-fold'}
 						onClick={toggle}
 					/>
 				</Header>
 				<Content
 					style={{
-						margin: '24px 16px',
-						padding: 24,
-						background: '#fff',
-						minHeight: 280
+						margin: '0 16px'
 					}}
 				>
 					<Breadcrumb style={{ margin: '16px 0' }}>
