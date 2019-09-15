@@ -30,7 +30,7 @@ body {
 	}
 }
 
-.trigger {
+.#{$class-dashboard-prefix}__trigger {
 	font-size: 18px;
 	line-height: 64px;
 	padding: 0 24px;
@@ -38,8 +38,14 @@ body {
 	transition: color 0.3s;
 }
 
-.trigger:hover {
+.#{$class-dashboard-prefix}__trigger:hover {
 	color: #1890ff;
+}
+
+.#{$class-dashboard-prefix}__logo {
+	height: 32px;
+	background: rgba(255, 255, 255, 0.2);
+	margin: 16px;
 }
 
 #root {
