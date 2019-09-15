@@ -1,13 +1,11 @@
 import React from 'react';
 import { Layout } from 'antd';
 
-import DashboardAside from 'containers/dashboardLayout/dashboardAside';
-import DashboardHeader from 'containers/dashboardLayout/dashboardHeader';
+import DashboardHeader from 'components/dashboard/header/dashboardHeader';
 
 export default function DashboardLayout() {
 	return (
-		<Layout className='app'>
-			<DashboardAside />
+		<Layout className='app' style={{ minHeight: '100vh' }}>
 			<DashboardHeader />
 		</Layout>
 	);
