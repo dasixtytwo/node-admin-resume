@@ -38,7 +38,7 @@ export default function DashboardHeader() {
 					</div>
 				</Content>
 				<Footer style={{ textAlign: 'center' }}>
-					Ant Design ©2019 Created by DA
+					DA Admin Theme ©2019 Created by DA
 				</Footer>
 			</Layout>
 		</Fragment>
