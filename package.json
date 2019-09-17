@@ -16,6 +16,11 @@
 		"heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build",
 		"post-build": "cd client && npm install --only=dev && npm install && npm run build"
 	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm lint --prefix client"
+		}
+	},
 	"author": "Davide Agosti",
 	"license": "MIT",
 	"dependencies": {
@@ -32,13 +37,14 @@
 		"validator": "^11.1.0"
 	},
 	"devDependencies": {
-		"concurrently": "^4.1.1",
 		"babel-eslint": "^10.0.2",
+		"concurrently": "^4.1.1",
 		"eslint": "^6.1.0",
 		"eslint-config-airbnb": "^17.1.1",
 		"eslint-plugin-import": "^2.18.2",
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-react": "^7.14.3",
+		"husky": "^3.0.5",
 		"nodemon": "^1.19.1"
 	}
 }
