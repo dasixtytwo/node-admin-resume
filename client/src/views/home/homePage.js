@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 import ScrollAnimation from "react-animate-on-scroll";
+import { Button } from "antd";
+import { TiDocument, TiArrowDown } from "react-icons/ti";
 import backgrounImg from "assets/images/it-bg01.jpg";
 
 export default function HomePage({ dataProfile }) {
@@ -45,15 +47,20 @@ export default function HomePage({ dataProfile }) {
 									experienced Frontend / Web developer
 								</h5>
 								<span data-target="local-scroll">
-									<a href="#resume" className="btn btn-lg btn-primary">
+									<Button
+										type="primary"
+										size="large"
+										shape="round"
+										href="#resume"
+									>
 										<span>Go to my resume!</span>
-										<i className="ti-arrow-down" />
-									</a>
+										<TiArrowDown size="1.5em" />
+									</Button>
 								</span>
-								<a href="/" className="btn btn-link">
+								<Button type="link" href="/">
 									<span>Download my CV</span>
-									<i className="ti-file" />
-								</a>
+									<TiDocument size="1.5em" />
+								</Button>
 							</div>
 						</Fragment>
 					))}
