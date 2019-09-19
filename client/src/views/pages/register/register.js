@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import { registerUser } from "actions/authActions";
 // Antd
 import { Button, Checkbox, Form, Icon, Input } from "antd";
+
 // Load image
 import loginImage from "assets/images/profile-bg.jpg";
 import logoBrand from "assets/images/logo/logo-dark.png";
@@ -144,6 +145,7 @@ class Register extends Component {
 								<FormItem>
 									<Button type="primary" className="da-mb-0" htmlType="submit">
 										Sign Up
+										<Icon type="import" />
 									</Button>
 									<span> or</span>{" "}
 									<Link to="/login">

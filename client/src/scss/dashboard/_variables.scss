@@ -1,11 +1,11 @@
 // Base background color for most components
 $component-background: #fff;
-$background-color-light: hsv(
-	0,
-	0,
-	98%
+$background-color-light: rgb(
+	250,
+	250,
+	250
 ); // background of header and selected item
-$background-color-base: hsv(0, 0, 96%); // Default grey background color
+$background-color-base: rgb(245, 245, 245); // Default grey background color
 
 /* 
 * PALETTE COLORS
