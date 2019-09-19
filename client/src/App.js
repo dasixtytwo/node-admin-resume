@@ -71,7 +71,11 @@ function App() {
 					/>
 					<Route exact path="/" name="Home" component={HomeLayout} />
 					{/* This go in protectedRoute later */}
-					<Route path="/" name="Dashboard" component={DashboardLayout} />
+					<ProtectedRoute
+						path="/"
+						name="Dashboard"
+						component={DashboardLayout}
+					/>
 				</Switch>
 			</Provider>
 		</Router>

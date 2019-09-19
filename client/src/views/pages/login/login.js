@@ -121,6 +121,7 @@ class Login extends Component {
 								<FormItem>
 									<Button type="primary" className="da-mb-0" htmlType="submit">
 										Sign In
+										<Icon type="import" />
 									</Button>
 									<span> or</span>{" "}
 									<Link to="/register">
