@@ -12,5 +12,5 @@ export default combineReducers({
 	errors: errorReducer,
 	post: postReducer,
 	project: portfolioReducer,
-	mail: mailReducer,
+	mail: mailReducer
 });

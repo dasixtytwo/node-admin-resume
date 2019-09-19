@@ -3,13 +3,13 @@ import {
 	GET_POSTS,
 	GET_POST,
 	DELETE_POST,
-	IS_LOADING,
+	IS_LOADING
 } from "actions/types";
 
 const initialState = {
 	posts: [],
 	post: {},
-	isLoading: false,
+	isLoading: false
 };
 
 export default function(state = initialState, action) {
@@ -17,29 +17,29 @@ export default function(state = initialState, action) {
 		case IS_LOADING:
 			return {
 				...state,
-				isLoading: true,
+				isLoading: true
 			};
 		case GET_POSTS:
 			return {
 				...state,
 				posts: action.payload,
-				isLoading: false,
+				isLoading: false
 			};
 		case GET_POST:
 			return {
 				...state,
 				post: action.payload,
-				isLoading: false,
+				isLoading: false
 			};
 		case ADD_POST:
 			return {
 				...state,
-				posts: [action.payload, ...state.posts],
+				posts: [action.payload, ...state.posts]
 			};
 		case DELETE_POST:
 			return {
 				...state,
-				posts: state.posts.filter(post => post.slug !== action.payload),
+				posts: state.posts.filter(post => post.slug !== action.payload)
 			};
 		default:
 			return state;

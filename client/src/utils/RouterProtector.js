@@ -1,27 +1,27 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Route, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const ProtectedRoute = ({ component: Component, auth, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      auth.isAuthenticated === true ? (
-        <Component {...props} />
-      ) : (
-          <Redirect to="/notfound" />
-        )
-    }
-  />
-)
+	<Route
+		{...rest}
+		render={props =>
+			auth.isAuthenticated === true ? (
+				<Component {...props} />
+			) : (
+				<Redirect to="/" />
+			)
+		}
+	/>
+);
 
 ProtectedRoute.propTypes = {
-  auth: PropTypes.object.isRequired
-}
+	auth: PropTypes.object.isRequired
+};
 
-const mapStateToProps = (state) => ({
-  auth: state.auth
-})
+const mapStateToProps = state => ({
+	auth: state.auth
+});
 
-export default connect(mapStateToProps)(ProtectedRoute)
+export default connect(mapStateToProps)(ProtectedRoute);

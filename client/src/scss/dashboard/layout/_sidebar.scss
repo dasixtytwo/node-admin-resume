@@ -1,0 +1,120 @@
+.#{$class-prefix}-app-sidebar {
+	@include transition(all 0.2s ease);
+}
+
+.ant-layout-sider {
+	background-color: $nav-dark-bg;
+	color: $nav-dark-text-color;
+	flex: 0 0 auto !important;
+	max-width: none !important;
+	min-width: 10px !important;
+	width: $sidebar-width !important;
+	overflow: hidden;
+
+	@media screen and (max-width: ($screen-xl-min + 166px)) {
+		width: ($sidebar-width - 40) !important;
+	}
+
+	&-collapsed {
+		width: $sidebar-mini-drawer-width !important;
+
+		&.#{$class-prefix}-mini-custom-sidebar {
+			@media screen and (max-width: $screen-md-max) {
+				width: 0 !important;
+				min-width: 0 !important;
+			}
+		}
+	}
+
+	&.#{$class-prefix}-collapsed-sidebar {
+		width: 0 !important;
+		min-width: 0 !important;
+	}
+
+	@media screen and (max-width: $screen-md-max) {
+		width: 0 !important;
+		min-width: 0 !important;
+	}
+}
+
+.#{$class-prefix}-sidebar-notifications {
+	padding: $sidebar-padding-lr 10px 10px;
+	margin: 0 20px 10px;
+	border-bottom: $border-style-base $border-width-base $border-color;
+
+	.ant-layout-sider-dark &,
+	.da-drawer-sidebar-dark & {
+		border-bottom-color: $nav-dark-text-color;
+	}
+
+	@media screen and (max-width: $screen-md-max) {
+		display: none;
+	}
+
+	&.#{$class-prefix}-no-header-notifications {
+		@media screen and (max-width: $screen-md-max) {
+			display: block;
+		}
+	}
+}
+
+.#{$class-prefix}-app-nav {
+	list-style: none;
+	padding-left: 0;
+	@include flex-display(flex, row, wrap);
+	@include align-items(center);
+	margin: 0 -20px;
+	color: $primary-color;
+
+	.ant-layout-sider-dark &,
+	.gx-drawer-sidebar-dark & {
+		color: $nav-dark-text-color;
+	}
+
+	& li {
+		padding: 0 20px;
+		font-size: $font-size-lg + 4px;
+
+		& .icon {
+			cursor: pointer;
+		}
+	}
+
+	.ant-layout-sider-collapsed & {
+		display: none;
+	}
+
+	.#{$class-prefix}-mini-custom-sidebar & {
+		display: block;
+		margin-top: 15px;
+
+		& li:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.#{$class-prefix}-avatar-name {
+	cursor: pointer;
+
+	.ant-layout-sider-collapsed & {
+		display: none;
+	}
+}
+
+.#{$class-prefix}-avatar-row {
+	.ant-layout-sider-collapsed & {
+		margin-bottom: 0 !important;
+	}
+
+	& .ant-avatar {
+		@include transition(all 0.3s ease-out);
+		position: relative;
+		left: 0;
+
+		.ant-layout-sider-collapsed & {
+			margin: 0 !important;
+			left: -10px;
+		}
+	}
+}

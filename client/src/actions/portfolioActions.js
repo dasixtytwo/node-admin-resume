@@ -9,7 +9,7 @@ import {
 	EDIT_PROJECT,
 	UPDATE_PROJECT,
 	DELETE_PROJECT,
-	IS_LOADING,
+	IS_LOADING
 } from "actions/types";
 
 // Get Projects
@@ -20,14 +20,14 @@ export const getProjects = () => dispatch => {
 		.then(res =>
 			dispatch({
 				type: GET_PROJECTS,
-				payload: res.data,
-			}),
+				payload: res.data
+			})
 		)
 		.catch(err =>
 			dispatch({
 				type: GET_PROJECTS,
-				payload: null,
-			}),
+				payload: null
+			})
 		);
 };
 
@@ -39,14 +39,14 @@ export const getProject = id => dispatch => {
 		.then(res =>
 			dispatch({
 				type: GET_PROJECT,
-				payload: res.data,
-			}),
+				payload: res.data
+			})
 		)
 		.catch(err =>
 			dispatch({
 				type: GET_PROJECT,
-				payload: null,
-			}),
+				payload: null
+			})
 		);
 };
 
@@ -58,14 +58,14 @@ export const addProject = projectData => dispatch => {
 		.then(res =>
 			dispatch({
 				type: ADD_PROJECT,
-				payload: res.data,
-			}),
+				payload: res.data
+			})
 		)
 		.catch(err =>
 			dispatch({
 				type: GET_ERRORS,
-				payload: err.response.data,
-			}),
+				payload: err.response.data
+			})
 		);
 };
 
@@ -77,14 +77,14 @@ export const editProject = id => dispatch => {
 		.then(res =>
 			dispatch({
 				type: EDIT_PROJECT,
-				payload: res.data,
-			}),
+				payload: res.data
+			})
 		)
 		.catch(err =>
 			dispatch({
 				type: GET_ERRORS,
-				payload: err.response.data,
-			}),
+				payload: err.response.data
+			})
 		);
 };
 
@@ -95,27 +95,27 @@ export const deleteProject = id => dispatch => {
 		.then(res =>
 			dispatch({
 				type: DELETE_PROJECT,
-				payload: id,
-			}),
+				payload: id
+			})
 		)
 		.catch(err =>
 			dispatch({
 				type: GET_ERRORS,
-				payload: err.response.data,
-			}),
+				payload: err.response.data
+			})
 		);
 };
 
 // Set loading state
 export const setProjectLoading = () => {
 	return {
-		type: IS_LOADING,
+		type: IS_LOADING
 	};
 };
 
 // Clear errors
 export const clearErrors = () => {
 	return {
-		type: CLEAR_ERRORS,
+		type: CLEAR_ERRORS
 	};
 };
