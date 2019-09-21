@@ -1,0 +1,163 @@
+.ant-menu {
+	&-dark,
+	&-dark &-sub {
+		color: $menu-dark-color;
+		background: $menu-dark-bg;
+		.ant-menu-submenu-title .ant-menu-submenu-arrow {
+			&:after,
+			&:before {
+				background: $menu-dark-arrow-color;
+			}
+		}
+	}
+
+	&-dark &-inline &-sub {
+		background: none;
+		box-shadow: none;
+	}
+
+	&-dark &-horizontal {
+		border-bottom-color: $menu-dark-bg;
+	}
+
+	&-dark &-horizontal > &-item,
+	&-dark &-horizontal > &-submenu {
+		border-color: $menu-dark-bg;
+	}
+
+	&-dark &-item .icon {
+		min-width: 14px;
+		margin-right: 20px;
+
+		&[class^="icon-"]::before,
+		&[class*=" icon-"]::before {
+			position: relative;
+			top: 2px;
+		}
+	}
+
+	&-dark &-item-group-title {
+		color: $menu-dark-color;
+	}
+
+	&-dark &-item {
+		color: $menu-dark-color;
+	}
+
+	&-dark &-item > a {
+		color: $menu-dark-color;
+	}
+
+	&-dark &-submenu-open &-submenu-open &-item > a {
+		color: $white-color;
+	}
+
+	&-dark &-submenu-selected &-submenu-selected &-item-selected > a {
+		color: $menu-dark-highlight-color;
+	}
+
+	&-dark &-item:hover,
+	&-dark &-item-active,
+	&-dark &-submenu-active,
+	&-dark &-submenu-selected,
+	&-dark &-submenu-title:hover,
+	&-dark &-submenu-open &-submenu-open &-item > a:hover {
+		color: $menu-dark-highlight-color;
+		> a {
+			color: $menu-dark-highlight-color;
+		}
+		> .ant-menu-submenu-title {
+			> .ant-menu-submenu-arrow {
+				&:after,
+				&:before {
+					background: $white-color;
+				}
+			}
+		}
+		> .ant-menu-submenu-title:hover {
+			> .ant-menu-submenu-arrow {
+				&:after,
+				&:before {
+					background: $menu-dark-highlight-color;
+				}
+			}
+		}
+	}
+
+	&-dark &-submenu-open {
+		color: $white-color;
+	}
+
+	&-dark &-inline-collapsed &:not(.ant-menu-inline) &-submenu-open,
+	&-dark &-inline-collapsed &-submenu-active {
+		& .ant-menu-submenu-title span {
+			color: $white-color;
+		}
+	}
+
+	&-dark &-item-selected {
+		color: $menu-dark-highlight-color;
+
+		> a,
+		> a:hover {
+			color: $menu-dark-highlight-color;
+		}
+	}
+
+	&-dark &-item-selected,
+	&-submenu-popup &-dark &-item-selected {
+		background-color: transparent;
+	}
+
+	&-dark .ant-menu-submenu-selected .ant-menu-sub .ant-menu-submenu-title {
+		color: $menu-dark-color;
+	}
+
+	&-dark .ant-menu-submenu-selected .ant-menu-submenu-title,
+	&-dark
+		.ant-menu-submenu-selected
+		.ant-menu-submenu-selected
+		.ant-menu-submenu-title {
+		color: $white-color;
+	}
+
+	&-dark .ant-menu-submenu-selected .ant-menu-submenu-title:hover,
+	&-dark
+		.ant-menu-submenu-selected
+		.ant-menu-submenu-selected
+		.ant-menu-submenu-title:hover {
+		color: $menu-dark-highlight-color;
+	}
+}
+
+.ant-menu-submenu-horizontal {
+	& > .ant-menu-submenu-title {
+		color: $header-text-color;
+	}
+}
+
+.ant-menu-dark
+	.ant-menu-submenu-open
+	> .ant-menu-submenu-title
+	> .ant-menu-submenu-arrow {
+	&:after,
+	&:before {
+		background: $white-color;
+	}
+}
+
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-submenu-vertical:hover {
+	& > .ant-menu-submenu-title {
+		color: $white-color;
+	}
+}
+
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected,
+.ant-menu.ant-menu-dark .ant-menu-item-selected {
+	background-color: transparent;
+}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub {
+	background: #003366;
+	box-shadow: none;
+}
