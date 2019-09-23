@@ -17,7 +17,7 @@ exports.registerUser = (req, res) => {
 	const { errors, isValid } = validateRegisterInput(req.body);
 
 	// Destructuring
-	const { name, email, password } = rea.body;
+	const { name, email, password } = req.body;
 
 	// Check validation
 	if (!isValid) {
@@ -25,7 +25,7 @@ exports.registerUser = (req, res) => {
 	}
 
 	User.findOne({
-		email: req.body.email,
+		email: req.body.email
 	}).then(user => {
 		if (user) {
 			errors.email = "Email already exists";
@@ -34,14 +34,14 @@ exports.registerUser = (req, res) => {
 			const avatar = gravatar.url(req.body.email, {
 				s: "200", // Size
 				r: "pg", // Rating
-				d: "mm", // Default
+				d: "mm" // Default
 			});
 
 			const newUser = new User({
 				name,
 				email,
 				avatar,
-				password,
+				password
 			});
 
 			bcrypt.genSalt(10, (err, salt) => {
@@ -74,7 +74,7 @@ exports.loginUser = (req, res) => {
 
 	// Find user by email
 	User.findOne({
-		email,
+		email
 	}).then(user => {
 		// Check for user
 		if (!user) {
@@ -90,7 +90,7 @@ exports.loginUser = (req, res) => {
 					id: user.id,
 					name: user.name,
 					email: user.email,
-					avatar: user.avatar,
+					avatar: user.avatar
 				}; // Create JWT Payload
 
 				// Sign Token
@@ -98,14 +98,14 @@ exports.loginUser = (req, res) => {
 					payload,
 					secretKey.secretOrKey,
 					{
-						expiresIn: 3600,
+						expiresIn: 3600
 					},
 					(err, token) => {
 						res.json({
 							success: true,
-							token: `Bearer ${token}`,
+							token: `Bearer ${token}`
 						});
-					},
+					}
 				);
 			} else {
 				errors.password = "Password incorrect";
@@ -122,6 +122,6 @@ exports.currentUser = (req, res) => {
 	res.json({
 		id: req.user.id,
 		name: req.user.name,
-		email: req.user.email,
+		email: req.user.email
 	});
 };
